@@ -2,7 +2,15 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
-        <RootNamespace>gateway_stub</RootNamespace>
+        <RootNamespace>GatewayStub</RootNamespace>
     </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="ByteFormatter\Interfaces" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="11.0.0" />
+    </ItemGroup>
 
 </Project>
