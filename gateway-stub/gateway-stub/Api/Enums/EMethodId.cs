@@ -43,5 +43,9 @@
         BalanceGetBalancesByUserIdAsArray = 41,
         BalanceGetListWithPagination = 42,
         Checkin = 127,
+        GetUndistributedExperience = 200,
+        GetScrolls = 201,
+        SpendExperience = 202,
+        LevelupHero = 203,
     }
 }

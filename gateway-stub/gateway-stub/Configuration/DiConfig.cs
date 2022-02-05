@@ -5,6 +5,7 @@ using GatewayStub.Api.RequestHandlers.Contract.Lobby;
 using GatewayStub.Api.RequestHandlers.Contract.Market;
 using GatewayStub.Api.RequestHandlers.Contract.Promo;
 using GatewayStub.Api.RequestHandlers.Contract.Purchase;
+using GatewayStub.Api.RequestHandlers.Contract.Test;
 using GatewayStub.Api.RequestHandlers.Contract.Transactions;
 using GatewayStub.Api.RequestReaders;
 using GatewayStub.Api.RequestReaders.Contract.Auth;
@@ -13,6 +14,7 @@ using GatewayStub.Api.RequestReaders.Contract.Lobby;
 using GatewayStub.Api.RequestReaders.Contract.Market;
 using GatewayStub.Api.RequestReaders.Contract.Promo;
 using GatewayStub.Api.RequestReaders.Contract.Purchase;
+using GatewayStub.Api.RequestReaders.Contract.Test;
 using GatewayStub.Api.RequestReaders.Contract.Transactions;
 using GatewayStub.Core.Exchange;
 using GatewayStub.Core.WebSocket;
@@ -73,6 +75,10 @@ namespace GatewayStub.Configuration
             container.AddSingleton<IContractRequestReader, BalanceGetBalanceByUserIdDataReader>();
             container.AddSingleton<IContractRequestReader, BalanceGetBalancesByUserIdAsArrayDataReader>();
             container.AddSingleton<IContractRequestReader, BalanceGetListWithPaginationDataReader>();
+            container.AddSingleton<IContractRequestReader, GetScrollsDataReader>();
+            container.AddSingleton<IContractRequestReader, GetUndistributedExperienceDataReader>();
+            container.AddSingleton<IContractRequestReader, LevelupHeroDataReader>();
+            container.AddSingleton<IContractRequestReader, SpendExperienceDataReader>();
 
             //ContractRequestHandlers
             container.AddSingleton<IContractRequestHandler, AuthAssignProviderAccountToDeviceIdHandler>();
@@ -110,6 +116,10 @@ namespace GatewayStub.Configuration
             container.AddSingleton<IContractRequestHandler, BalanceGetBalanceByUserIdHandler>();
             container.AddSingleton<IContractRequestHandler, BalanceGetBalancesByUserIdAsArrayHandler>();
             container.AddSingleton<IContractRequestHandler, BalanceGetListWithPaginationHandler>();
+            container.AddSingleton<IContractRequestHandler, GetScrollsHandler>();
+            container.AddSingleton<IContractRequestHandler, GetUndistributedExperienceHandler>();
+            container.AddSingleton<IContractRequestHandler, LevelupHeroHandler>();
+            container.AddSingleton<IContractRequestHandler, SpendExperienceHandler>();
 
             //Services
             container.AddSingleton<IWebSocketReader, WebSocketReader>();

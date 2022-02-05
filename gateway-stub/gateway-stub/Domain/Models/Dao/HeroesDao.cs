@@ -7,5 +7,7 @@ namespace GatewayStub.Domain.Models.Dao
     {
         public NetList<HeroDto> AvailableHeroes;
         public bool EquipHeroSuccess;
+        public int UndistributedExperience;
+        public int ScrollsAmount;
     }
 }

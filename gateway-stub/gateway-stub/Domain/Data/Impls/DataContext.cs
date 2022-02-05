@@ -1,5 +1,6 @@
 ﻿using GatewayStub.Api.Models.Dto;
 using GatewayStub.ByteFormatter;
+using GatewayStub.Domain.Enums;
 using GatewayStub.Domain.Models.Dao;
 
 namespace GatewayStub.Domain.Data.Impls
@@ -65,12 +66,104 @@ namespace GatewayStub.Domain.Data.Impls
             {
                 EquipmentProducts = new NetList<EquipmentPurchaseDto>
                 {
+                    new EquipmentPurchaseDto
+                    {
+                        EquipmentItemId = 3,
+                        ProductType = "Item: 3",
+                        CurrencyType = "LIS",
+                        Price = "2",
+                        Effects = new NetList<EquipmentEffectDto>
+                        {
+                            new EquipmentEffectDto
+                            {
+                                StatToEffect = EHeroStatType.Agility,
+                                Power = "15"
+                            },
+                            new EquipmentEffectDto
+                            {
+                                StatToEffect = EHeroStatType.MoveSpeed,
+                                Power = "1"
+                            }
+                        },
+                        IsSold = false,
+                    },
+                    new EquipmentPurchaseDto
+                    {
+                        EquipmentItemId = 2,
+                        ProductType = "Item: 2",
+                        CurrencyType = "LIS",
+                        Price = "5",
+                        Effects = new NetList<EquipmentEffectDto>
+                        {
+                            new EquipmentEffectDto
+                            {
+                                StatToEffect = EHeroStatType.Health,
+                                Power = "150"
+                            },
+                            new EquipmentEffectDto
+                            {
+                                StatToEffect = EHeroStatType.Strength,
+                                Power = "10"
+                            }
+                        },
+                        IsSold = true,
+                    }
                 },
                 PromoCodeRewards = new NetList<PromoRewardDto>
                 {
                 },
                 HeroProducts = new NetList<HeroPurchaseDto>
                 {
+                    new HeroPurchaseDto
+                    {
+                        HeroId = 1,
+                        ProductType = "Hero: 1",
+                        CurrencyType = "LIS",
+                        Price = "15",
+                        HeroStats = new HeroStatsDto
+                        {
+                            Strength = 1,
+                            Agility = 1,
+                            Intelligence = 1,
+                            MainStat = EMainStat.Agility,
+                            Health = 100,
+                            HealthRegenPercent = "1",
+                            Armor = "1",
+                            MoveSpeed = "1",
+                            AttackDamage = 1,
+                            AttackReloadSpeed = "1",
+                            SkillPower = 1,
+                            SkillEffectPower = 1,
+                            UltPower = 1,
+                            UltEffectPower = 1,
+                            VampirismPower = "1",
+                        },
+                    },
+                    new HeroPurchaseDto
+                    {
+                        HeroId = 3,
+                        ProductType = "Hero: 3",
+                        CurrencyType = "LIS",
+                        Price = "15",
+                        HeroStats = new HeroStatsDto
+                        {
+                            Strength = 1,
+                            Agility = 1,
+                            Intelligence = 1,
+                            MainStat = EMainStat.Agility,
+                            Health = 100,
+                            HealthRegenPercent = "1",
+                            Armor = "1",
+                            MoveSpeed = "1",
+                            AttackDamage = 1,
+                            AttackReloadSpeed = "1",
+                            SkillPower = 1,
+                            SkillEffectPower = 1,
+                            UltPower = 1,
+                            UltEffectPower = 1,
+                            VampirismPower = "1",
+                        },
+                    }
                 },
                 ProductPurchaseSuccess = true,
             };
@@ -98,6 +191,11 @@ namespace GatewayStub.Domain.Data.Impls
                 BalanceAmount = "100",
                 Currencies = new NetList<BalanceDto>
                 {
+                    new BalanceDto
+                    {
+                        Key = "LIS",
+                        Amount = "100",
+                    }
                 },
                 TransactionsCurrentPage = 1,
                 TransactionsPages = 1,
