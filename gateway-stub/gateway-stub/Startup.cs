@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Net;
 using System.Text;
 using System.Threading;
@@ -17,6 +18,7 @@ namespace GatewayStub
         public void ConfigureServices(IServiceCollection services)
         {
             services.ConfigureDependencies();
+            // services.AddMvc();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IWebSocketReader socketReader, IWebSocketWrapper socketWrapper)
@@ -28,11 +30,13 @@ namespace GatewayStub
 
             var webSocketOptions = new WebSocketOptions { KeepAliveInterval = TimeSpan.FromSeconds(60) };
             app.UseWebSockets(webSocketOptions);
+            // app.UseRouting();
 
             app.Use(async (ctx, next) =>
             {
                 if (ctx.WebSockets.IsWebSocketRequest)
                 {
+                    Console.WriteLine("Got websocket request");
                     using var webSocket = await ctx.WebSockets.AcceptWebSocketAsync();
                     socketWrapper.Current = webSocket;
                     var buffer = new byte[4096];
@@ -41,10 +45,7 @@ namespace GatewayStub
                     {
                         while (!result.CloseStatus.HasValue)
                         {
-                            var response = await socketReader.ReadAsync(buffer);
-                            // if (response != null)
-                            // await webSocket.SendAsync(new ArraySegment<byte>(Encoding.UTF8.GetBytes("Hello there")), result.MessageType, result.EndOfMessage, CancellationToken.None);
-
+                            await socketReader.ReadAsync(buffer);
                             result = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
                         }
 
@@ -53,6 +54,7 @@ namespace GatewayStub
                 }
                 else
                 {
+                    Console.WriteLine("Got non websocket request");
                     ctx.Response.StatusCode = (int) HttpStatusCode.BadRequest;
                 }
             });
