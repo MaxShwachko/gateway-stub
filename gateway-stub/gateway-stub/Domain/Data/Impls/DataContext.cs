@@ -229,6 +229,21 @@ namespace GatewayStub.Domain.Data.Impls
                 EquippedItemHeroUid = 1,
                 EquipmentBonuses = new HeroStatsDto
                 {
+                    Agility = 1,
+                    Armor = "1",
+                    Health = 1,
+                    Intelligence = 1,
+                    Strength = 1,
+                    AttackDamage = 1,
+                    MainStat = EMainStat.Agility,
+                    MoveSpeed = "1",
+                    SkillPower = 1,
+                    UltPower = 1,
+                    VampirismPower = "1",
+                    AttackReloadSpeed = "1",
+                    HealthRegenPercent = "1",
+                    SkillEffectPower = 1,
+                    UltEffectPower = 1,
                 }
             };
 

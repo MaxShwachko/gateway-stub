@@ -17,6 +17,8 @@ using GatewayStub.Api.RequestReaders.Contract.Purchase;
 using GatewayStub.Api.RequestReaders.Contract.Test;
 using GatewayStub.Api.RequestReaders.Contract.Transactions;
 using GatewayStub.Core.Exchange;
+using GatewayStub.Core.Http;
+using GatewayStub.Core.Http.Impls;
 using GatewayStub.Core.WebSocket;
 using GatewayStub.Core.WebSocket.Impls;
 using GatewayStub.Domain.Data;
@@ -124,6 +126,8 @@ namespace GatewayStub.Configuration
             //Services
             container.AddSingleton<IWebSocketReader, WebSocketReader>();
             container.AddSingleton<IWebSocketWrapper, WebSocketWrapper>();
+            container.AddSingleton<IWebSocketListener, WebSocketListener>();
+            container.AddSingleton<IHttpListener, HttpListener>();
             container.AddSingleton<IDataContext, DataContext>();
         }
     }
