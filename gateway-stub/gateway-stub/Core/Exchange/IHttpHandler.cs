@@ -7,6 +7,6 @@ namespace GatewayStub.Core.Exchange
     {
         string Route { get; }
 
-        Task Handle(HttpRequest request);
+        Task<int> Handle(HttpRequest request);
     }
 }

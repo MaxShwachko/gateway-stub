@@ -9,6 +9,6 @@ namespace GatewayStub.Domain.Models.Dao
         public bool EquipHeroSuccess;
         public int UndistributedExperience;
         public int ScrollsAmount;
-        public int SelectedHero;
+        public int SelectedHeroUid;
     }
 }

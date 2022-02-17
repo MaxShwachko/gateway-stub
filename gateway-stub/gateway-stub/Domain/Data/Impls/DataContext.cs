@@ -1,7 +1,9 @@
-﻿using GatewayStub.Api.Models.Dto;
+﻿using System.Collections.Generic;
+using GatewayStub.Api.Models.Dto;
 using GatewayStub.ByteFormatter;
 using GatewayStub.Domain.Enums;
 using GatewayStub.Domain.Models.Dao;
+using GatewayStub.Domain.Models.Json;
 
 namespace GatewayStub.Domain.Data.Impls
 {
@@ -60,6 +62,150 @@ namespace GatewayStub.Domain.Data.Impls
             {
                 StopSearchingSuccess = true,
                 StartSearchingSuccess = true,
+                CheckinSuccess = true,
+                ApiVersion = "1.0.0",
+                UserId = "1",
+                AuthToken = "authToken1",
+                TeamId = 1,
+                RoomHost = "127.0.0.1",
+                ProxyTcpPort = 7775,
+                RoomConfig = new RoomConfig
+                {
+                    balancerMessage = "message",
+                    balancerUrl = "http://localhost:5000",
+                    proxyIp = "127.0.0.1",
+                    roomId = 1,
+                    roomPort = 10520,
+                    tcpPort = 7776,
+                    players = new List<Player>()
+                    // {
+                    //     new Player
+                    //     {
+                    //         id = "2",
+                    //         authToken = "authToken2",
+                    //         team = 2,
+                    //         heroId = 1,
+                    //         heroStats = new HeroStats
+                    //         {
+                    //             strength = 1,
+                    //             agility = 1,
+                    //             intelligence = 1,
+                    //             mainStat = EMainStat.Agility,
+                    //             health = 100,
+                    //             healthRegenPercent = "1",
+                    //             armor = "1",
+                    //             moveSpeed = "1",
+                    //             attackDamage = 1,
+                    //             attackReloadSpeed = "1",
+                    //             skillPower = 1,
+                    //             skillEffectPower = 1,
+                    //             ultPower = 1,
+                    //             ultEffectPower = 1,
+                    //             vampirismPower = "1",
+                    //         },
+                    //     },
+                    //     new Player
+                    //     {
+                    //         id = "3",
+                    //         authToken = "authToken3",
+                    //         team = 1,
+                    //         heroId = 1,
+                    //         heroStats = new HeroStats
+                    //         {
+                    //             strength = 1,
+                    //             agility = 1,
+                    //             intelligence = 1,
+                    //             mainStat = EMainStat.Agility,
+                    //             health = 100,
+                    //             healthRegenPercent = "1",
+                    //             armor = "1",
+                    //             moveSpeed = "1",
+                    //             attackDamage = 1,
+                    //             attackReloadSpeed = "1",
+                    //             skillPower = 1,
+                    //             skillEffectPower = 1,
+                    //             ultPower = 1,
+                    //             ultEffectPower = 1,
+                    //             vampirismPower = "1",
+                    //         },
+                    //     },
+                    //     new Player
+                    //     {
+                    //         id = "4",
+                    //         authToken = "authToken4",
+                    //         team = 2,
+                    //         heroId = 1,
+                    //         heroStats = new HeroStats
+                    //         {
+                    //             strength = 1,
+                    //             agility = 1,
+                    //             intelligence = 1,
+                    //             mainStat = EMainStat.Agility,
+                    //             health = 100,
+                    //             healthRegenPercent = "1",
+                    //             armor = "1",
+                    //             moveSpeed = "1",
+                    //             attackDamage = 1,
+                    //             attackReloadSpeed = "1",
+                    //             skillPower = 1,
+                    //             skillEffectPower = 1,
+                    //             ultPower = 1,
+                    //             ultEffectPower = 1,
+                    //             vampirismPower = "1",
+                    //         },
+                    //     },
+                    //     new Player
+                    //     {
+                    //         id = "5",
+                    //         authToken = "authToken5",
+                    //         team = 1,
+                    //         heroId = 1,
+                    //         heroStats = new HeroStats
+                    //         {
+                    //             strength = 1,
+                    //             agility = 1,
+                    //             intelligence = 1,
+                    //             mainStat = EMainStat.Agility,
+                    //             health = 100,
+                    //             healthRegenPercent = "1",
+                    //             armor = "1",
+                    //             moveSpeed = "1",
+                    //             attackDamage = 1,
+                    //             attackReloadSpeed = "1",
+                    //             skillPower = 1,
+                    //             skillEffectPower = 1,
+                    //             ultPower = 1,
+                    //             ultEffectPower = 1,
+                    //             vampirismPower = "1",
+                    //         },
+                    //     },
+                    //     new Player
+                    //     {
+                    //         id = "6",
+                    //         authToken = "authToken6",
+                    //         team = 2,
+                    //         heroId = 1,
+                    //         heroStats = new HeroStats
+                    //         {
+                    //             strength = 1,
+                    //             agility = 1,
+                    //             intelligence = 1,
+                    //             mainStat = EMainStat.Agility,
+                    //             health = 100,
+                    //             healthRegenPercent = "1",
+                    //             armor = "1",
+                    //             moveSpeed = "1",
+                    //             attackDamage = 1,
+                    //             attackReloadSpeed = "1",
+                    //             skillPower = 1,
+                    //             skillEffectPower = 1,
+                    //             ultPower = 1,
+                    //             ultEffectPower = 1,
+                    //             vampirismPower = "1",
+                    //         },
+                    //     },
+                    // }
+                }
             };
 
             Products = new ProductsDao
@@ -419,7 +565,10 @@ namespace GatewayStub.Domain.Data.Impls
                         IsPending = false
                     }
                 },
-                EquipHeroSuccess = true
+                EquipHeroSuccess = true,
+                ScrollsAmount = 100,
+                UndistributedExperience = 0,
+                SelectedHeroUid = 1
             };
 
             Leaderboard = new LeaderboardDao

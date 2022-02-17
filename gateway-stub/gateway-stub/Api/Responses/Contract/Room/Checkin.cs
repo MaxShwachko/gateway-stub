@@ -15,13 +15,13 @@ namespace GatewayStub.Api.Responses.Contract.Room
         public readonly string AuthToken;
         public readonly string ProxyIp;
         public readonly int ProxyTcpPort;
-        public readonly short RoomId;
+        public readonly int RoomId;
         public readonly string RoomHost;
         public readonly int RoomPort;
         public readonly byte TeamId;
         public readonly NetList<PlayerDataDto> Players;
 
-        public Checkin(bool success, string apiVersion, string authToken, string proxyIp, int proxyTcpPort, short roomId, string roomHost, int roomPort, byte teamId, NetList<PlayerDataDto> players)
+        public Checkin(bool success, string apiVersion, string authToken, string proxyIp, int proxyTcpPort, int roomId, string roomHost, int roomPort, byte teamId, NetList<PlayerDataDto> players)
         {
             Success = success;
             ApiVersion = apiVersion;

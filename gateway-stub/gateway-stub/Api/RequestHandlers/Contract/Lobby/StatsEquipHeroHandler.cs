@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using GatewayStub.Api.Enums;
 using GatewayStub.Api.Requests.Contract.Lobby;
@@ -28,9 +29,18 @@ namespace GatewayStub.Api.RequestHandlers.Contract.Lobby
             Console.WriteLine("StatsEquipHero message received");
 
             var equipHeroRequest = (StatsEquipHeroRequest) request;
-            _dataContext.Heroes.SelectedHero = equipHeroRequest.BindingUid;
+            var selectedHeroUid = equipHeroRequest.BindingUid;
+            var selectedHero = _dataContext.Heroes.AvailableHeroes.FirstOrDefault(h => h.BindingUid == selectedHeroUid);
             var equipHeroSuccess = _dataContext.Heroes.EquipHeroSuccess;
 
+            if (selectedHero == null)
+            {
+                Console.WriteLine($"Couldn't find hero with binding UID = {selectedHeroUid}");
+                await _socket.Send(new StatsEquipHeroResponse(EGatewayErrorCode.UnknownError, equipHeroSuccess));
+                return;
+            }
+
+            _dataContext.Heroes.SelectedHeroUid = selectedHeroUid;
             await _socket.Send(new StatsEquipHeroResponse(EGatewayErrorCode.Success, equipHeroSuccess));
         }
     }

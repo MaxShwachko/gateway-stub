@@ -1,4 +1,5 @@
-﻿using GatewayStub.Api.RequestHandlers;
+﻿using GatewayStub.Api.HttpHandlers;
+using GatewayStub.Api.RequestHandlers;
 using GatewayStub.Api.RequestHandlers.Contract.Auth;
 using GatewayStub.Api.RequestHandlers.Contract.GameBalancer;
 using GatewayStub.Api.RequestHandlers.Contract.Lobby;
@@ -23,6 +24,8 @@ using GatewayStub.Core.WebSocket;
 using GatewayStub.Core.WebSocket.Impls;
 using GatewayStub.Domain.Data;
 using GatewayStub.Domain.Data.Impls;
+using GatewayStub.Domain.Services;
+using GatewayStub.Domain.Services.Impls;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace GatewayStub.Configuration
@@ -123,12 +126,17 @@ namespace GatewayStub.Configuration
             container.AddSingleton<IContractRequestHandler, LevelupHeroHandler>();
             container.AddSingleton<IContractRequestHandler, SpendExperienceHandler>();
 
+            //HttpHandlers
+            container.AddSingleton<IHttpHandler, RoomOverHandler>();
+            container.AddSingleton<IHttpHandler, RoomReadyHandler>();
+
             //Services
             container.AddSingleton<IWebSocketReader, WebSocketReader>();
             container.AddSingleton<IWebSocketWrapper, WebSocketWrapper>();
             container.AddSingleton<IWebSocketListener, WebSocketListener>();
             container.AddSingleton<IHttpListener, HttpListener>();
             container.AddSingleton<IDataContext, DataContext>();
+            container.AddSingleton<IMatchmakingService, MatchmakingService>();
         }
     }
 }

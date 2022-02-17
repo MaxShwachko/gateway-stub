@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using GatewayStub.Core.Exchange;
 using Microsoft.AspNetCore.Http;
 
@@ -8,9 +9,10 @@ namespace GatewayStub.Api.HttpHandlers
     {
         public string Route => "over";
 
-        public Task Handle(HttpRequest request)
+        public Task<int> Handle(HttpRequest request)
         {
-            return Task.CompletedTask;
+            Console.WriteLine("RoomOverHandler handle");
+            return Task.FromResult(StatusCodes.Status200OK);
         }
     }
 }

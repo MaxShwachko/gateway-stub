@@ -20,6 +20,7 @@ namespace GatewayStub
         public void ConfigureServices(IServiceCollection services)
         {
             services.ConfigureDependencies();
+            services.AddHttpClient();
             // services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,10 +20,26 @@ namespace GatewayStub.Core.Http.Impls
         public async Task Listen(HttpContext ctx)
         {
             var requestPath = ctx.Request.Path;
-            var pathParts = requestPath.Value.Split('/');
-            var route = pathParts[3];
-            var handler = _handlers[route];
-            await handler.Handle(ctx.Request);
+            Console.WriteLine("Path: " + requestPath);
+            var handler = TryGetHandler(requestPath);
+            if (handler == null)
+            {
+                Console.WriteLine($"Couldn't find handler for path: {requestPath}");
+                return;
+            }
+
+            var statusCode = await handler.Handle(ctx.Request);
+            ctx.Response.StatusCode = statusCode;
+            await ctx.Response.CompleteAsync();
+        }
+
+        private IHttpHandler TryGetHandler(string route)
+        {
+            var pathParts = route.Split('/');
+            foreach (var handler in _handlers)
+                if (pathParts.Contains(handler.Key))
+                    return handler.Value;
+            return null;
         }
     }
 }

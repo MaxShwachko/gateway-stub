@@ -5,6 +5,7 @@ using GatewayStub.Api.Responses.Contract.Lobby;
 using GatewayStub.Core.Exchange;
 using GatewayStub.Core.WebSocket;
 using GatewayStub.Domain.Data;
+using GatewayStub.Domain.Services;
 
 namespace GatewayStub.Api.RequestHandlers.Contract.Lobby
 {
@@ -15,18 +16,20 @@ namespace GatewayStub.Api.RequestHandlers.Contract.Lobby
 
         private readonly IWebSocketWrapper _socket;
         private readonly IDataContext _dataContext;
+        private readonly IMatchmakingService _matchmakingService;
 
-        public LobbyStartGameHandler(IWebSocketWrapper socket, IDataContext dataContext)
+        public LobbyStartGameHandler(IWebSocketWrapper socket, IDataContext dataContext, IMatchmakingService matchmakingService)
         {
             _socket = socket;
             _dataContext = dataContext;
+            _matchmakingService = matchmakingService;
         }
 
         public async Task Handle(IContractRequestData request)
         {
             Console.WriteLine("LobbyStartGame message received");
             var startSearchingSuccess = _dataContext.Matchmaking.StartSearchingSuccess;
-            //TODO : start matchmaking flow here
+            await _matchmakingService.StartMatchmaking();
             await _socket.Send(new LobbyStartGameResponse(EGatewayErrorCode.Success, startSearchingSuccess));
         }
     }
