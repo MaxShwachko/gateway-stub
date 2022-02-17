@@ -5,7 +5,7 @@ using GatewayStub.Core.Exchange;
 
 namespace GatewayStub.Api.RequestReaders.Contract.Auth
 {
-    public class AuthConfirmPasswordDataReader : IContractRequestReader
+    public class AuthConfirmPasswordDataReader : IContractRequestDataReader
     {
         public byte AgentId => (byte) EAgentId.Auth;
         public byte MethodId => (byte) EMethodId.AuthConfirmPassword;

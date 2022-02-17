@@ -5,7 +5,7 @@ using GatewayStub.Core.Exchange;
 
 namespace GatewayStub.Api.RequestReaders.Contract.Promo
 {
-    public class CodesUseDataReader : IContractRequestReader
+    public class CodesUseDataReader : IContractRequestDataReader
     {
         public byte AgentId => (byte) EAgentId.Promo;
         public byte MethodId => (byte) EMethodId.CodesUse;

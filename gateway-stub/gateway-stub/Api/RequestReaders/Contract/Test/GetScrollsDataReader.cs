@@ -5,7 +5,7 @@ using GatewayStub.Core.Exchange;
 
 namespace GatewayStub.Api.RequestReaders.Contract.Test
 {
-    public class GetScrollsDataReader : IContractRequestReader
+    public class GetScrollsDataReader : IContractRequestDataReader
     {
         public byte AgentId => (byte) EAgentId.Test;
         public byte MethodId => (byte) EMethodId.GetScrolls;

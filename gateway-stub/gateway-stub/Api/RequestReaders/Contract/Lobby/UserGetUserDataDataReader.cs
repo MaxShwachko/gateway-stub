@@ -5,7 +5,7 @@ using GatewayStub.Core.Exchange;
 
 namespace GatewayStub.Api.RequestReaders.Contract.Lobby
 {
-    public class UserGetUserDataDataReader : IContractRequestReader
+    public class UserGetUserDataDataReader : IContractRequestDataReader
     {
         public byte AgentId => (byte) EAgentId.Lobby;
         public byte MethodId => (byte) EMethodId.UserGetUserData;

@@ -20,6 +20,7 @@ namespace GatewayStub.Domain.Data.Impls
         public LeaderboardDao Leaderboard { get; set; }
         public SettingsDao Settings { get; set; }
         public UserDao User { get; set; }
+        public LootboxesDao Lootboxes { get; set; }
 
         public DataContext()
         {
@@ -418,6 +419,75 @@ namespace GatewayStub.Domain.Data.Impls
 
             Heroes = new HeroesDao
             {
+                AllHeroes = new NetList<AvailableHeroDto>
+                {
+                    new AvailableHeroDto
+                    {
+                        HeroId = 1,
+                        Stats = new HeroStatsRangeDto
+                        {
+                            Strength = new[] {1, 2},
+                            Agility = new[] {1, 2},
+                            Intelligence = new[] {1, 2},
+                            MainStat = EMainStat.Agility,
+                            Health = new[] {1, 2},
+                            HealthRegenPercent = new[] {"1", "2"},
+                            Armor = new[] {"1", "2"},
+                            MoveSpeed = new[] {"1", "2"},
+                            AttackDamage = new[] {1, 2},
+                            AttackReloadSpeed = new[] {"1", "2"},
+                            SkillPower = new[] {1, 2},
+                            SkillEffectPower = new[] {1, 2},
+                            UltPower = new[] {1, 2},
+                            UltEffectPower = new[] {1, 2},
+                            VampirismPower = new[] {"1", "2"},
+                        }
+                    },
+                    new AvailableHeroDto
+                    {
+                        HeroId = 4,
+                        Stats = new HeroStatsRangeDto
+                        {
+                            Strength = new[] {1, 2},
+                            Agility = new[] {1, 2},
+                            Intelligence = new[] {1, 2},
+                            MainStat = EMainStat.Agility,
+                            Health = new[] {1, 2},
+                            HealthRegenPercent = new[] {"1", "2"},
+                            Armor = new[] {"1", "2"},
+                            MoveSpeed = new[] {"1", "2"},
+                            AttackDamage = new[] {1, 2},
+                            AttackReloadSpeed = new[] {"1", "2"},
+                            SkillPower = new[] {1, 2},
+                            SkillEffectPower = new[] {1, 2},
+                            UltPower = new[] {1, 2},
+                            UltEffectPower = new[] {1, 2},
+                            VampirismPower = new[] {"1", "2"},
+                        }
+                    },
+                    new AvailableHeroDto
+                    {
+                        HeroId = 5,
+                        Stats = new HeroStatsRangeDto
+                        {
+                            Strength = new[] {1, 2},
+                            Agility = new[] {1, 2},
+                            Intelligence = new[] {1, 2},
+                            MainStat = EMainStat.Agility,
+                            Health = new[] {1, 2},
+                            HealthRegenPercent = new[] {"1", "2"},
+                            Armor = new[] {"1", "2"},
+                            MoveSpeed = new[] {"1", "2"},
+                            AttackDamage = new[] {1, 2},
+                            AttackReloadSpeed = new[] {"1", "2"},
+                            SkillPower = new[] {1, 2},
+                            SkillEffectPower = new[] {1, 2},
+                            UltPower = new[] {1, 2},
+                            UltEffectPower = new[] {1, 2},
+                            VampirismPower = new[] {"1", "2"},
+                        }
+                    },
+                },
                 AvailableHeroes = new NetList<HeroDto>
                 {
                     new HeroDto
@@ -604,6 +674,50 @@ namespace GatewayStub.Domain.Data.Impls
                 TokensIncreaseBy = "1",
                 SetImageSuccess = true,
                 SetUsernameSuccess = true,
+            };
+
+            Lootboxes = new LootboxesDao
+            {
+                LootboxProducts = new NetList<LootboxProductDto>
+                {
+                    new LootboxProductDto
+                    {
+                        LootboxId = 1,
+                        Type = 1,
+                        ProductType = "Lootbox1",
+                        CurrencyType = "LIS",
+                        Price = "1"
+                    },
+                    new LootboxProductDto
+                    {
+                        LootboxId = 2,
+                        Type = 2,
+                        ProductType = "Lootbox2",
+                        CurrencyType = "LIS",
+                        Price = "5"
+                    },
+                    new LootboxProductDto
+                    {
+                        LootboxId = 3,
+                        Type = 3,
+                        ProductType = "Lootbox3",
+                        CurrencyType = "LIS",
+                        Price = "10"
+                    },
+                },
+                UserLootboxes = new NetList<LootboxDto>
+                {
+                    new LootboxDto
+                    {
+                        LootboxId = 1,
+                        BindingUid = 1,
+                    },
+                    new LootboxDto
+                    {
+                        LootboxId = 2,
+                        BindingUid = 2,
+                    },
+                },
             };
         }
     }

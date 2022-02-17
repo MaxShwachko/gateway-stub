@@ -2,7 +2,7 @@
 
 namespace GatewayStub.Core.Exchange
 {
-    public interface IContractRequestReader
+    public interface IContractRequestDataReader
     {
         public byte AgentId { get; }
         public byte MethodId { get; }

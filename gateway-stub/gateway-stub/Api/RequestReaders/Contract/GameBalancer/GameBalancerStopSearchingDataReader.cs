@@ -5,7 +5,7 @@ using GatewayStub.Core.Exchange;
 
 namespace GatewayStub.Api.RequestReaders.Contract.GameBalancer
 {
-    public class GameBalancerStopSearchingDataReader : IContractRequestReader
+    public class GameBalancerStopSearchingDataReader : IContractRequestDataReader
     {
         public byte AgentId => (byte) EAgentId.GameBalancer;
         public byte MethodId => (byte) EMethodId.GameBalancerStopSearching;

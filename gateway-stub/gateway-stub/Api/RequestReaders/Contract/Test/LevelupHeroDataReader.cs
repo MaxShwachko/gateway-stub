@@ -5,7 +5,7 @@ using GatewayStub.Core.Exchange;
 
 namespace GatewayStub.Api.RequestReaders.Contract.Test
 {
-    public class LevelupHeroDataReader : IContractRequestReader
+    public class LevelupHeroDataReader : IContractRequestDataReader
     {
         public byte AgentId => (byte) EAgentId.Test;
         public byte MethodId => (byte) EMethodId.LevelupHero;

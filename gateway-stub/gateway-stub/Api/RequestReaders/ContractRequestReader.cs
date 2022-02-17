@@ -11,10 +11,10 @@ namespace GatewayStub.Api.RequestReaders
 {
     public class ContractRequestReader : IRequestReader
     {
-        private readonly Dictionary<Tuple<byte,byte>,IContractRequestReader> _requestReaders;
+        private readonly Dictionary<Tuple<byte,byte>,IContractRequestDataReader> _requestReaders;
         public byte Header => (byte) EHeader.Contract;
 
-        public ContractRequestReader(IEnumerable<IContractRequestReader> requestReaders)
+        public ContractRequestReader(IEnumerable<IContractRequestDataReader> requestReaders)
         {
             _requestReaders = requestReaders.ToDictionary(reader => new Tuple<byte, byte>(reader.AgentId, reader.MethodId));
         }

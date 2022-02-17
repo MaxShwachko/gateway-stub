@@ -5,7 +5,7 @@ using GatewayStub.Core.Exchange;
 
 namespace GatewayStub.Api.RequestReaders.Contract.Market
 {
-    public class ItemsGetListOfAvailableDataReader : IContractRequestReader
+    public class ItemsGetListOfAvailableDataReader : IContractRequestDataReader
     {
         public byte AgentId => (byte) EAgentId.Market;
         public byte MethodId => (byte) EMethodId.ItemsGetListOfAvailable;

@@ -47,5 +47,12 @@
         GetScrolls = 201,
         SpendExperience = 202,
         LevelupHero = 203,
+        GetAllHeroesList = 204,
+        GetLootboxProducts = 205,
+        GetLootboxesList = 206,
+        OpenLootbox = 207,
+        NonEquippableItemAddedNotification = 208,
+        LootboxOpenedNotification = 209,
+        UndistributedExperienceAddedNotification = 210
     }
 }

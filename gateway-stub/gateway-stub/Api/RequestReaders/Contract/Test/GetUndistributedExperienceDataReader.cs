@@ -5,7 +5,7 @@ using GatewayStub.Core.Exchange;
 
 namespace GatewayStub.Api.RequestReaders.Contract.Test
 {
-    public class GetUndistributedExperienceDataReader : IContractRequestReader
+    public class GetUndistributedExperienceDataReader : IContractRequestDataReader
     {
         public byte AgentId => (byte) EAgentId.Test;
         public byte MethodId => (byte) EMethodId.GetUndistributedExperience;

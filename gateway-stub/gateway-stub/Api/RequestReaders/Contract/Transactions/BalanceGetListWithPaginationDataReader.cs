@@ -5,7 +5,7 @@ using GatewayStub.Core.Exchange;
 
 namespace GatewayStub.Api.RequestReaders.Contract.Transactions
 {
-    public class BalanceGetListWithPaginationDataReader : IContractRequestReader
+    public class BalanceGetListWithPaginationDataReader : IContractRequestDataReader
     {
         public byte AgentId => (byte) EAgentId.Transactions;
         public byte MethodId => (byte) EMethodId.BalanceGetListWithPagination;

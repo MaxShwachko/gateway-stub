@@ -16,6 +16,7 @@ namespace GatewayStub.Domain.Data
         LeaderboardDao Leaderboard { get; set; }
         SettingsDao Settings { get; set; }
         UserDao User { get; set; }
+        LootboxesDao Lootboxes { get; set; }
     }
 
 }
