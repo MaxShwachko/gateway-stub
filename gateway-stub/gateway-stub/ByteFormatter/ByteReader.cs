@@ -312,6 +312,18 @@ namespace GatewayStub.ByteFormatter
 			}
 		}
 
+		public string[] ReadStringArray()
+		{
+			var lenght = ReadInt32();
+			var array = new string[lenght];
+			for (var i = 0; i < lenght; i++)
+			{
+				array[i] = ReadString();
+			}
+
+			return array;
+		}
+
 		public List<T> ReadList<T>()
 			where T : IByteConvertable, new()
 		{

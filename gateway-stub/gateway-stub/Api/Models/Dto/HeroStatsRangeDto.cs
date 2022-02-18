@@ -48,16 +48,16 @@ namespace GatewayStub.Api.Models.Dto
             Intelligence = reader.ReadInt32Array();
             MainStat = (EMainStat) reader.ReadByte();
             Health = reader.ReadInt32Array();
-            HealthRegenPercent = reader.ReadInt32Array();
-            Armor = reader.ReadInt32Array();
-            MoveSpeed = reader.ReadInt32Array();
+            HealthRegenPercent = reader.ReadStringArray();
+            Armor = reader.ReadStringArray();
+            MoveSpeed = reader.ReadStringArray();
             AttackDamage = reader.ReadInt32Array();
-            AttackReloadSpeed = reader.ReadInt32Array();
+            AttackReloadSpeed = reader.ReadStringArray();
             SkillPower = reader.ReadInt32Array();
             SkillEffectPower = reader.ReadInt32Array();
             UltPower = reader.ReadInt32Array();
             UltEffectPower = reader.ReadInt32Array();
-            VampirismPower = reader.ReadInt32Array();
+            VampirismPower = reader.ReadStringArray();
         }
     }
 }

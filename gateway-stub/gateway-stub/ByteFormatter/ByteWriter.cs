@@ -279,6 +279,15 @@ namespace GatewayStub.ByteFormatter
 			WriteBytesAndSize(bytes, bytes.Length);
 		}
 
+		public void Write(string[] array)
+		{
+			Write(array.Length);
+			for (var i = 0; i < array.Length; i++)
+			{
+				Write(array[i]);
+			}
+		}
+
 		public IEnumerator Write<T>(IList<T> list)
 			where T : IByteConvertable
 		{
