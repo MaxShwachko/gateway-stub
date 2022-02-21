@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using GatewayStub.Api.Enums;
+using GatewayStub.Api.Requests.Contract.Lobby;
 using GatewayStub.Api.Responses.Contract.Lobby;
 using GatewayStub.Core.Exchange;
 using GatewayStub.Core.WebSocket;
@@ -25,9 +26,10 @@ namespace GatewayStub.Api.RequestHandlers.Contract.Lobby
         public async Task Handle(IContractRequestData request)
         {
             Console.WriteLine("StatsUnequipItem message received");
+            var statsUnequipHeroRequest = (StatsUnequipItemRequest) request;
             var equipment = _dataContext.Equipment;
-            await _socket.Send(new StatsUnequipItemResponse(EGatewayErrorCode.Success, equipment.EquippedItemBindingUid,
-                equipment.EquipmentBonuses));
+            await _socket.Send(new StatsUnequipItemResponse(EGatewayErrorCode.Success, statsUnequipHeroRequest.BindingUid,
+                equipment.EquipmentBonuses, 0));
         }
     }
 }

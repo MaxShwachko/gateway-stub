@@ -338,8 +338,25 @@ namespace GatewayStub.Domain.Data.Impls
                     },
                     new EquipmentItemDto
                     {
-                        EquipmentItemId = 6,
+                        EquipmentItemId = 10,
                         BindingUid = 1,
+                        BlockId = "0",
+                        LinkToExplorer = "",
+                        TransactionHash = "",
+                        Effects = new NetList<EquipmentEffectDto>
+                        {
+                            new EquipmentEffectDto
+                            {
+                                StatToEffect = EHeroStatType.AttackDamage,
+                                Power = "10"
+                            }
+                        },
+                        IsPending = false
+                    },
+                    new EquipmentItemDto
+                    {
+                        EquipmentItemId = 6,
+                        BindingUid = 2,
                         BlockId = "0",
                         LinkToExplorer = "",
                         TransactionHash = "",
@@ -356,7 +373,7 @@ namespace GatewayStub.Domain.Data.Impls
                     new EquipmentItemDto
                     {
                         EquipmentItemId = 14,
-                        BindingUid = 2,
+                        BindingUid = 3,
                         BlockId = "0",
                         LinkToExplorer = "",
                         TransactionHash = "",
@@ -365,6 +382,23 @@ namespace GatewayStub.Domain.Data.Impls
                             new EquipmentEffectDto
                             {
                                 StatToEffect = EHeroStatType.SkillDamage,
+                                Power = "10"
+                            }
+                        },
+                        IsPending = false
+                    },
+                    new EquipmentItemDto
+                    {
+                        EquipmentItemId = 5,
+                        BindingUid = 4,
+                        BlockId = "0",
+                        LinkToExplorer = "",
+                        TransactionHash = "",
+                        Effects = new NetList<EquipmentEffectDto>
+                        {
+                            new EquipmentEffectDto
+                            {
+                                StatToEffect = EHeroStatType.Armor,
                                 Power = "10"
                             }
                         },
@@ -614,19 +648,19 @@ namespace GatewayStub.Domain.Data.Impls
                         {
                             new SlotDto
                             {
-                                BindingUid = 0,
+                                BindingUid = 3,
                                 Type = EEquipmentType.Weapon,
                                 ItemUid = -1,
                             },
                             new SlotDto
                             {
-                                BindingUid = 1,
+                                BindingUid = 4,
                                 Type = EEquipmentType.Armor,
                                 ItemUid = -1,
                             },
                             new SlotDto
                             {
-                                BindingUid = 2,
+                                BindingUid = 5,
                                 Type = EEquipmentType.Amulet,
                                 ItemUid = -1,
                             }
