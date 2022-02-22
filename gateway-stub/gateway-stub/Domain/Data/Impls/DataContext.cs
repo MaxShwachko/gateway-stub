@@ -321,51 +321,66 @@ namespace GatewayStub.Domain.Data.Impls
                 {
                     new EquipmentItemDto
                     {
-                        EquipmentItemId = 9,
-                        BindingUid = 0,
-                        BlockId = "0",
-                        LinkToExplorer = "",
-                        TransactionHash = "",
-                        Effects = new NetList<EquipmentEffectDto>
-                        {
-                            new EquipmentEffectDto
-                            {
-                                StatToEffect = EHeroStatType.AttackDamage,
-                                Power = "10"
-                            }
-                        },
-                        IsPending = false
-                    },
-                    new EquipmentItemDto
-                    {
-                        EquipmentItemId = 6,
+                        EquipmentItemId = 5,
                         BindingUid = 1,
-                        BlockId = "0",
-                        LinkToExplorer = "",
-                        TransactionHash = "",
+                        BlockId = "0xc83a5bff85e800785904f8085f9d747224873dd2d88b751aee9bc85bcd069b34",
+                        LinkToExplorer = "https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.realis.network%2F#/explorer/query/0xc83a5bff85e800785904f8085f9d747224873dd2d88b751aee9bc85bcd069b34",
+                        TransactionHash = "0x382c604197db6109dc1ad6677792772b6aa4f6e7fe4bd77c2d36a4019d65a6ae",
                         Effects = new NetList<EquipmentEffectDto>
                         {
                             new EquipmentEffectDto
                             {
-                                StatToEffect = EHeroStatType.Health,
-                                Power = "10"
+                                StatToEffect = EHeroStatType.Agility,
+                                Power = "9"
+                            },
+                            new EquipmentEffectDto
+                            {
+                                StatToEffect = EHeroStatType.Intelligence,
+                                Power = "5"
                             }
                         },
                         IsPending = false
                     },
                     new EquipmentItemDto
                     {
-                        EquipmentItemId = 14,
+                        EquipmentItemId = 11,
                         BindingUid = 2,
-                        BlockId = "0",
-                        LinkToExplorer = "",
-                        TransactionHash = "",
+                        BlockId = "0xa9541b5ec818dacea2089872e44018e2f077eee7247b856a9e3c4fc1259550b2",
+                        LinkToExplorer = "https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.realis.network%2F#/explorer/query/0xa9541b5ec818dacea2089872e44018e2f077eee7247b856a9e3c4fc1259550b2",
+                        TransactionHash = "0x382c604197db6109dc1ad6677792772b6aa4f6e7fe4bd77c2d36a4019d65a6ae",
                         Effects = new NetList<EquipmentEffectDto>
                         {
                             new EquipmentEffectDto
                             {
-                                StatToEffect = EHeroStatType.SkillDamage,
-                                Power = "10"
+                                StatToEffect = EHeroStatType.Agility,
+                                Power = "6"
+                            },
+                            new EquipmentEffectDto
+                            {
+                                StatToEffect = EHeroStatType.Intelligence,
+                                Power = "9"
+                            }
+                        },
+                        IsPending = false
+                    },
+                    new EquipmentItemDto
+                    {
+                        EquipmentItemId = 9,
+                        BindingUid = 3,
+                        BlockId = "0x72e47bdaf2866082ef8e3ad309e35c873788a9e4fbd963b5bc1769a06fc29253",
+                        LinkToExplorer = "https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.realis.network%2F#/explorer/query/0x72e47bdaf2866082ef8e3ad309e35c873788a9e4fbd963b5bc1769a06fc29253",
+                        TransactionHash = "0xd484bea7d9a0c20d583e6c704bfe25d1443f65e0ce3f13d2907cf85ccd052352",
+                        Effects = new NetList<EquipmentEffectDto>
+                        {
+                            new EquipmentEffectDto
+                            {
+                                StatToEffect = EHeroStatType.Agility,
+                                Power = "6"
+                            },
+                            new EquipmentEffectDto
+                            {
+                                StatToEffect = EHeroStatType.Intelligence,
+                                Power = "9"
                             }
                         },
                         IsPending = false
@@ -426,21 +441,43 @@ namespace GatewayStub.Domain.Data.Impls
                         HeroId = 1,
                         Stats = new HeroStatsRangeDto
                         {
-                            Strength = new[] {1, 2},
-                            Agility = new[] {1, 2},
-                            Intelligence = new[] {1, 2},
-                            MainStat = EMainStat.Agility,
-                            Health = new[] {1, 2},
-                            HealthRegenPercent = new[] {"1", "2"},
-                            Armor = new[] {"1", "2"},
-                            MoveSpeed = new[] {"1", "2"},
-                            AttackDamage = new[] {1, 2},
-                            AttackReloadSpeed = new[] {"1", "2"},
-                            SkillPower = new[] {1, 2},
-                            SkillEffectPower = new[] {1, 2},
-                            UltPower = new[] {1, 2},
-                            UltEffectPower = new[] {1, 2},
-                            VampirismPower = new[] {"1", "2"},
+                            Strength = new[] {4, 6},                
+                            Agility = new[] {5, 7},                 
+                            Intelligence = new[] {8, 10},           
+                            MainStat = EMainStat.Strength,          
+                            Health = new[] {550, 560},              
+                            HealthRegenPercent = new[] {"9", "11"}, 
+                            Armor = new[] {"1", "2"},               
+                            MoveSpeed = new[] {"2", "4"},           
+                            AttackDamage = new[] {100, 110},        
+                            AttackReloadSpeed = new[] {"10", "12"}, 
+                            SkillPower = new[] {25, 35},            
+                            SkillEffectPower = new[] {1, 2},        
+                            UltPower = new[] {4, 6},                
+                            UltEffectPower = new[] {1, 2},          
+                            VampirismPower = new[] {"0", "1"},      
+                        }
+                    },
+                    new AvailableHeroDto
+                    {
+                        HeroId = 3,
+                        Stats = new HeroStatsRangeDto
+                        {
+                            Strength = new[] {5, 7},                  
+                            Agility = new[] {8, 10},                  
+                            Intelligence = new[] {4, 6},              
+                            MainStat = EMainStat.Strength,            
+                            Health = new[] {550, 600},                
+                            HealthRegenPercent = new[] {"8", "12"},   
+                            Armor = new[] {"8", "10"},                
+                            MoveSpeed = new[] {"2", "4"},             
+                            AttackDamage = new[] {150, 200},          
+                            AttackReloadSpeed = new[] {"5", "10"},    
+                            SkillPower = new[] {6, 8},                
+                            SkillEffectPower = new[] {1, 2},          
+                            UltPower = new[] {5, 7},                  
+                            UltEffectPower = new[] {1, 2},            
+                            VampirismPower = new[] {"0", "1"},        
                         }
                     },
                     new AvailableHeroDto
@@ -451,18 +488,18 @@ namespace GatewayStub.Domain.Data.Impls
                             Strength = new[] {1, 2},
                             Agility = new[] {1, 2},
                             Intelligence = new[] {1, 2},
-                            MainStat = EMainStat.Agility,
-                            Health = new[] {1, 2},
+                            MainStat = EMainStat.Strength,
+                            Health = new[] {600, 620},
                             HealthRegenPercent = new[] {"1", "2"},
-                            Armor = new[] {"1", "2"},
-                            MoveSpeed = new[] {"1", "2"},
+                            Armor = new[] {"0", "1"},
+                            MoveSpeed = new[] {"2", "4"},
                             AttackDamage = new[] {1, 2},
                             AttackReloadSpeed = new[] {"1", "2"},
                             SkillPower = new[] {1, 2},
                             SkillEffectPower = new[] {1, 2},
                             UltPower = new[] {1, 2},
                             UltEffectPower = new[] {1, 2},
-                            VampirismPower = new[] {"1", "2"},
+                            VampirismPower = new[] {"0", "1"},
                         }
                     },
                     new AvailableHeroDto
@@ -470,21 +507,43 @@ namespace GatewayStub.Domain.Data.Impls
                         HeroId = 5,
                         Stats = new HeroStatsRangeDto
                         {
-                            Strength = new[] {1, 2},
-                            Agility = new[] {1, 2},
-                            Intelligence = new[] {1, 2},
-                            MainStat = EMainStat.Agility,
-                            Health = new[] {1, 2},
-                            HealthRegenPercent = new[] {"1", "2"},
-                            Armor = new[] {"1", "2"},
-                            MoveSpeed = new[] {"1", "2"},
+                            Strength = new[] {4, 6},                
+                            Agility = new[] {4, 6},                 
+                            Intelligence = new[] {8, 10},           
+                            MainStat = EMainStat.Strength,          
+                            Health = new[] {600, 650},              
+                            HealthRegenPercent = new[] {"8", "12"}, 
+                            Armor = new[] {"5", "7"},               
+                            MoveSpeed = new[] {"2", "4"},           
+                            AttackDamage = new[] {90, 100},         
+                            AttackReloadSpeed = new[] {"10", "12"}, 
+                            SkillPower = new[] {5, 7},              
+                            SkillEffectPower = new[] {1, 2},        
+                            UltPower = new[] {4, 6},                
+                            UltEffectPower = new[] {1, 2},          
+                            VampirismPower = new[] {"0", "1"},      
+                        }
+                    },
+                    new AvailableHeroDto
+                    {
+                        HeroId = 6,
+                        Stats = new HeroStatsRangeDto
+                        {
+                            Strength = new[] {20, 25},
+                            Agility = new[] {20, 25},
+                            Intelligence = new[] {20, 30},
+                            MainStat = EMainStat.Intelligence,
+                            Health = new[] {600, 620},
+                            HealthRegenPercent = new[] {"0.1", "0.2"},
+                            Armor = new[] {"0", "1"},
+                            MoveSpeed = new[] {"5", "6"},
                             AttackDamage = new[] {1, 2},
                             AttackReloadSpeed = new[] {"1", "2"},
                             SkillPower = new[] {1, 2},
-                            SkillEffectPower = new[] {1, 2},
+                            SkillEffectPower = new[] {40, 50},
                             UltPower = new[] {1, 2},
                             UltEffectPower = new[] {1, 2},
-                            VampirismPower = new[] {"1", "2"},
+                            VampirismPower = new[] {"0", "1"},
                         }
                     },
                 },
@@ -504,68 +563,68 @@ namespace GatewayStub.Domain.Data.Impls
                         LinkToExplorer = "",
                         HeroStats = new HeroStatsDto
                         {
-                            Strength = 1,
-                            Agility = 1,
-                            Intelligence = 1,
-                            MainStat = EMainStat.Agility,
-                            Health = 100,
-                            HealthRegenPercent = "1",
+                            Strength = 5,
+                            Agility = 6,
+                            Intelligence = 9,
+                            MainStat = EMainStat.Strength,
+                            Health = 555,
+                            HealthRegenPercent = "10",
                             Armor = "1",
-                            MoveSpeed = "1",
-                            AttackDamage = 1,
-                            AttackReloadSpeed = "1",
-                            SkillPower = 1,
+                            MoveSpeed = "3",
+                            AttackDamage = 105,
+                            AttackReloadSpeed = "10.5",
+                            SkillPower = 30,
                             SkillEffectPower = 1,
-                            UltPower = 1,
+                            UltPower = 5,
                             UltEffectPower = 1,
-                            VampirismPower = "1",
+                            VampirismPower = "0",
                         },
                         EquipmentBonuses = new HeroStatsDto
                         {
-                            Strength = 1,
-                            Agility = 1,
-                            Intelligence = 1,
+                            Strength = 0,
+                            Agility = 0,
+                            Intelligence = 0,
                             MainStat = EMainStat.Agility,
-                            Health = 100,
-                            HealthRegenPercent = "1",
-                            Armor = "1",
-                            MoveSpeed = "1",
-                            AttackDamage = 1,
-                            AttackReloadSpeed = "1",
-                            SkillPower = 1,
-                            SkillEffectPower = 1,
-                            UltPower = 1,
-                            UltEffectPower = 1,
-                            VampirismPower = "1",
+                            Health = 0,
+                            HealthRegenPercent = "0",
+                            Armor = "0",
+                            MoveSpeed = "0",
+                            AttackDamage = 0,
+                            AttackReloadSpeed = "0",
+                            SkillPower = 0,
+                            SkillEffectPower = 0,
+                            UltPower = 0,
+                            UltEffectPower = 0,
+                            VampirismPower = "0",
                         },
                         Slots = new NetList<SlotDto>
                         {
                             new SlotDto
                             {
-                                BindingUid = 0,
-                                Type = EEquipmentType.Weapon,
-                                ItemUid = -1,
-                            },
-                            new SlotDto
-                            {
                                 BindingUid = 1,
-                                Type = EEquipmentType.Armor,
-                                ItemUid = -1,
+                                Type = EEquipmentType.Weapon,
+                                ItemUid = 0,
                             },
                             new SlotDto
                             {
                                 BindingUid = 2,
+                                Type = EEquipmentType.Armor,
+                                ItemUid = 0,
+                            },
+                            new SlotDto
+                            {
+                                BindingUid = 3,
                                 Type = EEquipmentType.Amulet,
-                                ItemUid = -1,
+                                ItemUid = 0,
                             }
                         },
-                        BlockId = "0",
+                        BlockId = "",
                         IsPending = false
                     },
                     new HeroDto
                     {
-                        HeroId = 5,
-                        Level = 2,
+                        HeroId = 3,
+                        Level = 1,
                         Experience = 0,
                         MaxLevel = 10,
                         LevelupExperienceCost = 100,
@@ -576,62 +635,134 @@ namespace GatewayStub.Domain.Data.Impls
                         LinkToExplorer = "",
                         HeroStats = new HeroStatsDto
                         {
-                            Strength = 1,
-                            Agility = 1,
-                            Intelligence = 1,
-                            MainStat = EMainStat.Agility,
-                            Health = 100,
-                            HealthRegenPercent = "1",
-                            Armor = "1",
-                            MoveSpeed = "1",
-                            AttackDamage = 1,
-                            AttackReloadSpeed = "1",
-                            SkillPower = 1,
+                            Strength = 6,
+                            Agility = 9,
+                            Intelligence = 5,
+                            MainStat = EMainStat.Strength,
+                            Health = 586,
+                            HealthRegenPercent = "10",
+                            Armor = "9",
+                            MoveSpeed = "3",
+                            AttackDamage = 156,
+                            AttackReloadSpeed = "7",
+                            SkillPower = 7,
                             SkillEffectPower = 1,
-                            UltPower = 1,
+                            UltPower = 6,
                             UltEffectPower = 1,
-                            VampirismPower = "1",
+                            VampirismPower = "0",
                         },
                         EquipmentBonuses = new HeroStatsDto
                         {
-                            Strength = 1,
-                            Agility = 1,
-                            Intelligence = 1,
+                            Strength = 0,
+                            Agility = 0,
+                            Intelligence = 0,
                             MainStat = EMainStat.Agility,
-                            Health = 100,
-                            HealthRegenPercent = "1",
-                            Armor = "1",
-                            MoveSpeed = "1",
-                            AttackDamage = 1,
-                            AttackReloadSpeed = "1",
-                            SkillPower = 1,
-                            SkillEffectPower = 1,
-                            UltPower = 1,
-                            UltEffectPower = 1,
-                            VampirismPower = "1",
+                            Health = 0,
+                            HealthRegenPercent = "0",
+                            Armor = "0",
+                            MoveSpeed = "0",
+                            AttackDamage = 0,
+                            AttackReloadSpeed = "0",
+                            SkillPower = 0,
+                            SkillEffectPower = 0,
+                            UltPower = 0,
+                            UltEffectPower = 0,
+                            VampirismPower = "0",
                         },
                         Slots = new NetList<SlotDto>
                         {
                             new SlotDto
                             {
-                                BindingUid = 0,
+                                BindingUid = 4,
                                 Type = EEquipmentType.Weapon,
-                                ItemUid = -1,
+                                ItemUid = 0,
                             },
                             new SlotDto
                             {
-                                BindingUid = 1,
+                                BindingUid = 5,
                                 Type = EEquipmentType.Armor,
-                                ItemUid = -1,
+                                ItemUid = 0,
                             },
                             new SlotDto
                             {
-                                BindingUid = 2,
+                                BindingUid = 6,
                                 Type = EEquipmentType.Amulet,
-                                ItemUid = -1,
+                                ItemUid = 0,
                             }
                         },
-                        BlockId = "0",
+                        BlockId = "",
+                        IsPending = false
+                    },
+                    new HeroDto
+                    {
+                        HeroId = 5,
+                        Level = 1,
+                        Experience = 0,
+                        MaxLevel = 10,
+                        LevelupExperienceCost = 100,
+                        LevelupScrollsCost = 10,
+                        IsActive = false,
+                        TransactionHash = "",
+                        BindingUid = 3,
+                        LinkToExplorer = "",
+                        HeroStats = new HeroStatsDto
+                        {
+                            Strength = 5,
+                            Agility = 6,
+                            Intelligence = 9,
+                            MainStat = EMainStat.Strength,
+                            Health = 625,
+                            HealthRegenPercent = "10",
+                            Armor = "6",
+                            MoveSpeed = "3",
+                            AttackDamage = 95,
+                            AttackReloadSpeed = "11",
+                            SkillPower = 6,
+                            SkillEffectPower = 1,
+                            UltPower = 5,
+                            UltEffectPower = 1,
+                            VampirismPower = "0",
+                        },
+                        EquipmentBonuses = new HeroStatsDto
+                        {
+                            Strength = 0,
+                            Agility = 0,
+                            Intelligence = 0,
+                            MainStat = EMainStat.Agility,
+                            Health = 0,
+                            HealthRegenPercent = "0",
+                            Armor = "0",
+                            MoveSpeed = "0",
+                            AttackDamage = 0,
+                            AttackReloadSpeed = "0",
+                            SkillPower = 0,
+                            SkillEffectPower = 0,
+                            UltPower = 0,
+                            UltEffectPower = 0,
+                            VampirismPower = "0",
+                        },
+                        Slots = new NetList<SlotDto>
+                        {
+                            new SlotDto
+                            {
+                                BindingUid = 7,
+                                Type = EEquipmentType.Weapon,
+                                ItemUid = 0,
+                            },
+                            new SlotDto
+                            {
+                                BindingUid = 8,
+                                Type = EEquipmentType.Armor,
+                                ItemUid = 0,
+                            },
+                            new SlotDto
+                            {
+                                BindingUid = 9,
+                                Type = EEquipmentType.Amulet,
+                                ItemUid = 0,
+                            }
+                        },
+                        BlockId = "",
                         IsPending = false
                     }
                 },
@@ -647,6 +778,42 @@ namespace GatewayStub.Domain.Data.Impls
                 Pages = 1,
                 Leaderboard = new NetList<LeaderboardPlaceDto>
                 {
+                    new LeaderboardPlaceDto
+                    {
+                        Place = 1,
+                        Rating = 0,
+                        Username = "TestUser1"
+                    },
+                    new LeaderboardPlaceDto
+                    {
+                        Place = 2,
+                        Rating = 0,
+                        Username = "TestUser2"
+                    },
+                    new LeaderboardPlaceDto
+                    {
+                        Place = 3,
+                        Rating = 0,
+                        Username = "TestUser3"
+                    },
+                    new LeaderboardPlaceDto
+                    {
+                        Place = 4,
+                        Rating = 0,
+                        Username = "TestUser4"
+                    },
+                    new LeaderboardPlaceDto
+                    {
+                        Place = 5,
+                        Rating = 0,
+                        Username = "TestUser5"
+                    },
+                    new LeaderboardPlaceDto
+                    {
+                        Place = 6,
+                        Rating = 0,
+                        Username = "TestUser6"
+                    },
                 }
             };
 
@@ -670,7 +837,7 @@ namespace GatewayStub.Domain.Data.Impls
                 Draw = 1,
                 PlaceInLeaderBoard = 1,
                 Image = 1,
-                Email = "Email",
+                Email = "googler@gmail.com",
                 TokensIncreaseBy = "1",
                 SetImageSuccess = true,
                 SetUsernameSuccess = true,
