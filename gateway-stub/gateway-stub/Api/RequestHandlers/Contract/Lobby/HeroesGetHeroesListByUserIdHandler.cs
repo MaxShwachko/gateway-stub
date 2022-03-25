@@ -10,7 +10,7 @@ namespace GatewayStub.Api.RequestHandlers.Contract.Lobby
 {
     public class HeroesGetHeroesListByUserIdHandler : IContractRequestHandler
     {
-        public byte AgentId => (byte) EAgentId.Lobby;
+        public byte AgentId => (byte) EAgentId.ListeriaStorage;
         public byte MethodId => (byte) EMethodId.HeroesGetHeroesListByUserId;
                 
         private readonly IWebSocketWrapper _socket;

@@ -8,15 +8,15 @@ using GatewayStub.Domain.Data;
 
 namespace GatewayStub.Api.RequestHandlers.Contract.Market
 {
-    public class ItemsGetListOfAvailableHandler : IContractRequestHandler
+    public class ItemsGetLootboxesListHandler : IContractRequestHandler
     {
         public byte AgentId => (byte) EAgentId.Market;
-        public byte MethodId => (byte) EMethodId.ItemsGetListOfAvailable;
+        public byte MethodId => (byte) EMethodId.ItemsGetLootboxesList;
                 
         private readonly IWebSocketWrapper _socket;
         private readonly IDataContext _dataContext;
 
-        public ItemsGetListOfAvailableHandler(IWebSocketWrapper socket, IDataContext dataContext)
+        public ItemsGetLootboxesListHandler(IWebSocketWrapper socket, IDataContext dataContext)
         {
             _socket = socket;
             _dataContext = dataContext;
@@ -25,8 +25,8 @@ namespace GatewayStub.Api.RequestHandlers.Contract.Market
         public async Task Handle(IContractRequestData request)
         {
             Console.WriteLine("ItemsGetListOfAvailable message received");
-            var equipmentProducts = _dataContext.Products.EquipmentProducts;
-            await _socket.Send(new ItemsGetListOfAvailableResponse(EGatewayErrorCode.Success, equipmentProducts));
+            var equipmentProducts = _dataContext.Products.LootboxProducts;
+            await _socket.Send(new ItemsGetLootboxesListResponse(EGatewayErrorCode.Success, equipmentProducts));
         }
     }
 }

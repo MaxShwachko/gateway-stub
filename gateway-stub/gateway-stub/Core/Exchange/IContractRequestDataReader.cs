@@ -4,8 +4,8 @@ namespace GatewayStub.Core.Exchange
 {
     public interface IContractRequestDataReader
     {
-        public byte AgentId { get; }
-        public byte MethodId { get; }
+        byte AgentId { get; }
+        byte MethodId { get; }
 
         IContractRequestData ReadRequest(ByteReader reader);
     }

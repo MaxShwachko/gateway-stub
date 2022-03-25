@@ -6,6 +6,5 @@ namespace GatewayStub.Domain.Models.Dao
     public class LootboxesDao
     {
         public NetList<LootboxDto> UserLootboxes;
-        public NetList<LootboxProductDto> LootboxProducts;
     }
 }

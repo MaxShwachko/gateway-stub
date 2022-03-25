@@ -7,7 +7,7 @@ namespace GatewayStub.Api.RequestReaders.Contract.Lobby
 {
     public class HeroesGetHeroesListByUserIdDataReader : IContractRequestDataReader
     {
-        public byte AgentId => (byte) EAgentId.Lobby;
+        public byte AgentId => (byte) EAgentId.ListeriaStorage;
         public byte MethodId => (byte) EMethodId.HeroesGetHeroesListByUserId;
         
         public IContractRequestData ReadRequest(ByteReader reader)

@@ -10,7 +10,7 @@ namespace GatewayStub.Api.RequestHandlers.Contract.Lobby
 {
     public class InventoryGetItemsListHandler : IContractRequestHandler
     {
-        public byte AgentId => (byte) EAgentId.Lobby;
+        public byte AgentId => (byte) EAgentId.ListeriaStorage;
         public byte MethodId => (byte) EMethodId.InventoryGetItemsList;
                 
         private readonly IWebSocketWrapper _socket;

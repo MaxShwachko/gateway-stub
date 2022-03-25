@@ -7,7 +7,7 @@ namespace GatewayStub.Api.Responses.Contract.Room
 {
     public class Checkin : AContractResponse
     {
-        public override byte AgentId => (byte) EAgentId.Checkin;
+        public override byte AgentId => (byte) EAgentId.Room;
         public override byte MethodId => (byte) EMethodId.Checkin;
         
         public readonly bool Success;

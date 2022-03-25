@@ -7,7 +7,7 @@ namespace GatewayStub.Api.Responses.Contract.Lobby
 {
     public class InventoryGetItemsListResponse : AContractResponse
     {
-        public override byte AgentId => (byte) EAgentId.Lobby;
+        public override byte AgentId => (byte) EAgentId.ListeriaStorage;
         public override byte MethodId => (byte) EMethodId.InventoryGetItemsList;
         
         public readonly EGatewayErrorCode ErrorCode;

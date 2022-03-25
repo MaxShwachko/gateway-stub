@@ -72,7 +72,7 @@ namespace GatewayStub.Configuration
             container.AddSingleton<IContractRequestDataReader, UserSetSettingsDataReader>();
             container.AddSingleton<IContractRequestDataReader, UserUpdateProfileImageDataReader>();
             container.AddSingleton<IContractRequestDataReader, UserUpdateUsernameDataReader>();
-            container.AddSingleton<IContractRequestDataReader, ItemsGetListOfAvailableDataReader>();
+            container.AddSingleton<IContractRequestDataReader, ItemsGetLootboxesListDataReader>();
             container.AddSingleton<IContractRequestDataReader, CodesUseDataReader>();
             container.AddSingleton<IContractRequestDataReader, ProductGetHeroListDataReader>();
             container.AddSingleton<IContractRequestDataReader, ProductPurchaseDataReader>();
@@ -117,7 +117,7 @@ namespace GatewayStub.Configuration
             container.AddSingleton<IContractRequestHandler, UserSetSettingsHandler>();
             container.AddSingleton<IContractRequestHandler, UserUpdateProfileImageHandler>();
             container.AddSingleton<IContractRequestHandler, UserUpdateUsernameHandler>();
-            container.AddSingleton<IContractRequestHandler, ItemsGetListOfAvailableHandler>();
+            container.AddSingleton<IContractRequestHandler, ItemsGetLootboxesListHandler>();
             container.AddSingleton<IContractRequestHandler, CodesUseHandler>();
             container.AddSingleton<IContractRequestHandler, ProductGetHeroListHandler>();
             container.AddSingleton<IContractRequestHandler, ProductPurchaseHandler>();

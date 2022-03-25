@@ -5,15 +5,15 @@ using GatewayStub.Core.Exchange;
 
 namespace GatewayStub.Api.Responses.Contract.Market
 {
-    public class ItemsGetListOfAvailableResponse : AContractResponse
+    public class ItemsGetLootboxesListResponse : AContractResponse
     {
         public override byte AgentId => (byte) EAgentId.Market;
-        public override byte MethodId => (byte) EMethodId.ItemsGetListOfAvailable;
+        public override byte MethodId => (byte) EMethodId.ItemsGetLootboxesList;
         
         public readonly EGatewayErrorCode ErrorCode;
-        public readonly NetList<EquipmentPurchaseDto> Products;
+        public readonly NetList<LootboxProductDto> Products;
 
-        public ItemsGetListOfAvailableResponse(EGatewayErrorCode errorCode, NetList<EquipmentPurchaseDto> products)
+        public ItemsGetLootboxesListResponse(EGatewayErrorCode errorCode, NetList<LootboxProductDto> products)
         {
             ErrorCode = errorCode;
             Products = products;

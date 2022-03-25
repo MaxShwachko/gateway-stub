@@ -211,51 +211,33 @@ namespace GatewayStub.Domain.Data.Impls
 
             Products = new ProductsDao
             {
-                EquipmentProducts = new NetList<EquipmentPurchaseDto>
-                {
-                    new EquipmentPurchaseDto
-                    {
-                        EquipmentItemId = 3,
-                        ProductType = "Item: 3",
-                        CurrencyType = "LIS",
-                        Price = "2",
-                        Effects = new NetList<EquipmentEffectDto>
-                        {
-                            new EquipmentEffectDto
-                            {
-                                StatToEffect = EHeroStatType.Agility,
-                                Power = "15"
-                            },
-                            new EquipmentEffectDto
-                            {
-                                StatToEffect = EHeroStatType.MoveSpeed,
-                                Power = "1"
-                            }
-                        },
-                        IsSold = false,
-                    },
-                    new EquipmentPurchaseDto
-                    {
-                        EquipmentItemId = 2,
-                        ProductType = "Item: 2",
-                        CurrencyType = "LIS",
-                        Price = "5",
-                        Effects = new NetList<EquipmentEffectDto>
-                        {
-                            new EquipmentEffectDto
-                            {
-                                StatToEffect = EHeroStatType.Health,
-                                Power = "150"
-                            },
-                            new EquipmentEffectDto
-                            {
-                                StatToEffect = EHeroStatType.Strength,
-                                Power = "10"
-                            }
-                        },
-                        IsSold = true,
-                    }
-                },
+                LootboxProducts  = new NetList<LootboxProductDto>
+				{
+					new LootboxProductDto
+					{
+						LootboxId = 1,
+						Type = 1,
+						ProductType = "Lootbox1",
+						CurrencyType = "LIS",
+						Price = "1"
+					},
+					new LootboxProductDto
+					{
+						LootboxId = 2,
+						Type = 2,
+						ProductType = "Lootbox2",
+						CurrencyType = "LIS",
+						Price = "5"
+					},
+					new LootboxProductDto
+					{
+						LootboxId = 3,
+						Type = 3,
+						ProductType = "Lootbox3",
+						CurrencyType = "LIS",
+						Price = "10"
+					},
+				},
                 PromoCodeRewards = new NetList<PromoRewardDto>
                 {
                 },
@@ -845,33 +827,6 @@ namespace GatewayStub.Domain.Data.Impls
 
             Lootboxes = new LootboxesDao
             {
-                LootboxProducts = new NetList<LootboxProductDto>
-                {
-                    new LootboxProductDto
-                    {
-                        LootboxId = 1,
-                        Type = 1,
-                        ProductType = "Lootbox1",
-                        CurrencyType = "LIS",
-                        Price = "1"
-                    },
-                    new LootboxProductDto
-                    {
-                        LootboxId = 2,
-                        Type = 2,
-                        ProductType = "Lootbox2",
-                        CurrencyType = "LIS",
-                        Price = "5"
-                    },
-                    new LootboxProductDto
-                    {
-                        LootboxId = 3,
-                        Type = 3,
-                        ProductType = "Lootbox3",
-                        CurrencyType = "LIS",
-                        Price = "10"
-                    },
-                },
                 UserLootboxes = new NetList<LootboxDto>
                 {
                     new LootboxDto
