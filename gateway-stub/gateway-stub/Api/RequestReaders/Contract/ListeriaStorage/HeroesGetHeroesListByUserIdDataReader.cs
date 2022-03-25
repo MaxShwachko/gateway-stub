@@ -1,9 +1,10 @@
 ﻿using GatewayStub.Api.Enums;
+using GatewayStub.Api.Requests.Contract.ListeriaStorage;
 using GatewayStub.Api.Requests.Contract.Lobby;
 using GatewayStub.ByteFormatter;
 using GatewayStub.Core.Exchange;
 
-namespace GatewayStub.Api.RequestReaders.Contract.Lobby
+namespace GatewayStub.Api.RequestReaders.Contract.ListeriaStorage
 {
     public class HeroesGetHeroesListByUserIdDataReader : IContractRequestDataReader
     {

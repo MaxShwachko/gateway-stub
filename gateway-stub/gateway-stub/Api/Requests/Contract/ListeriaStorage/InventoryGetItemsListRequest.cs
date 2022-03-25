@@ -1,6 +1,6 @@
 ﻿using GatewayStub.Core.Exchange;
 
-namespace GatewayStub.Api.Requests.Contract.Lobby
+namespace GatewayStub.Api.Requests.Contract.ListeriaStorage
 {
     public class InventoryGetItemsListRequest : IContractRequestData
     {

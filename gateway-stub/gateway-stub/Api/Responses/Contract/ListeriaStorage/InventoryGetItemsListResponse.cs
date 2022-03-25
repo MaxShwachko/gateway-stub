@@ -3,7 +3,7 @@ using GatewayStub.Api.Models.Dto;
 using GatewayStub.ByteFormatter;
 using GatewayStub.Core.Exchange;
 
-namespace GatewayStub.Api.Responses.Contract.Lobby
+namespace GatewayStub.Api.Responses.Contract.ListeriaStorage
 {
     public class InventoryGetItemsListResponse : AContractResponse
     {

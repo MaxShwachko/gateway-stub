@@ -2,6 +2,7 @@
 using GatewayStub.Api.RequestHandlers;
 using GatewayStub.Api.RequestHandlers.Contract.Auth;
 using GatewayStub.Api.RequestHandlers.Contract.GameBalancer;
+using GatewayStub.Api.RequestHandlers.Contract.ListeriaStorage;
 using GatewayStub.Api.RequestHandlers.Contract.Lobby;
 using GatewayStub.Api.RequestHandlers.Contract.Market;
 using GatewayStub.Api.RequestHandlers.Contract.Promo;
@@ -11,6 +12,7 @@ using GatewayStub.Api.RequestHandlers.Contract.Transactions;
 using GatewayStub.Api.RequestReaders;
 using GatewayStub.Api.RequestReaders.Contract.Auth;
 using GatewayStub.Api.RequestReaders.Contract.GameBalancer;
+using GatewayStub.Api.RequestReaders.Contract.ListeriaStorage;
 using GatewayStub.Api.RequestReaders.Contract.Lobby;
 using GatewayStub.Api.RequestReaders.Contract.Market;
 using GatewayStub.Api.RequestReaders.Contract.Promo;

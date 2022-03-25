@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Threading.Tasks;
 using GatewayStub.Api.Enums;
+using GatewayStub.Api.Responses.Contract.ListeriaStorage;
 using GatewayStub.Api.Responses.Contract.Lobby;
 using GatewayStub.Core.Exchange;
 using GatewayStub.Core.WebSocket;
 using GatewayStub.Domain.Data;
 
-namespace GatewayStub.Api.RequestHandlers.Contract.Lobby
+namespace GatewayStub.Api.RequestHandlers.Contract.ListeriaStorage
 {
     public class HeroesGetHeroesListByUserIdHandler : IContractRequestHandler
     {
