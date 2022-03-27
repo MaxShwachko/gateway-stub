@@ -1,5 +1,4 @@
 ﻿using GatewayStub.Api.Enums;
-using GatewayStub.Api.Models.Dto;
 using GatewayStub.ByteFormatter;
 using GatewayStub.Core.Exchange;
 
@@ -11,18 +10,18 @@ namespace GatewayStub.Api.Responses.Contract.ListeriaStorage
         public override byte MethodId => (byte) EMethodId.HeroesLevelUp;
 
         public readonly EGatewayErrorCode ErrorCode;
-        public readonly HeroDto Hero;
+        public readonly bool IsSuccess;
 
-        public HeroesLevelUpResponse(EGatewayErrorCode errorCode, HeroDto hero)
+        public HeroesLevelUpResponse(EGatewayErrorCode errorCode, bool isSuccess)
         {
             ErrorCode = errorCode;
-            Hero = hero;
-        }
+			IsSuccess = isSuccess;
+		}
 
         protected override void WriteBody(ByteWriter writer)
         {
             writer.Write((int) ErrorCode);
-            Hero.NetSerialize(writer);
-        }
+			writer.Write(IsSuccess);
+		}
     }
 }

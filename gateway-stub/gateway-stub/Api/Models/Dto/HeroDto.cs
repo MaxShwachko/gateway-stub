@@ -8,9 +8,6 @@ namespace GatewayStub.Api.Models.Dto
         public byte HeroId;
         public short Level;
         public int Experience;
-        public short MaxLevel;
-        public int LevelupExperienceCost;
-        public int LevelupScrollsCost;
         public bool IsActive;
         public string TransactionHash;
         public int BindingUid;
@@ -20,15 +17,15 @@ namespace GatewayStub.Api.Models.Dto
         public NetList<SlotDto> Slots;
         public string BlockId;
         public bool IsPending;
+		public int LevelupExperienceCost;
+		public int LevelupScrollsCost;
+		public short MaxLevel;
 
         public void NetSerialize(ByteWriter writer)
         {
             writer.Write(HeroId);
             writer.Write(Level);
             writer.Write(Experience);
-            writer.Write(MaxLevel);
-            writer.Write(LevelupExperienceCost);
-            writer.Write(LevelupScrollsCost);
             writer.Write(IsActive);
             writer.Write(TransactionHash);
             writer.Write(BindingUid);
@@ -38,6 +35,9 @@ namespace GatewayStub.Api.Models.Dto
             Slots.NetSerialize(writer);
             writer.Write(BlockId);
             writer.Write(IsPending);
+			writer.Write(LevelupExperienceCost);
+			writer.Write(LevelupScrollsCost);
+			writer.Write(MaxLevel);
         }
 
         public void NetDeserialize(ByteReader reader)
@@ -45,9 +45,6 @@ namespace GatewayStub.Api.Models.Dto
             HeroId = reader.ReadByte();
             Level = reader.ReadInt16();
             Experience = reader.ReadInt32();
-            MaxLevel = reader.ReadInt16();
-            LevelupExperienceCost = reader.ReadInt32();
-            LevelupScrollsCost = reader.ReadInt32();
             IsActive = reader.ReadBoolean();
             TransactionHash = reader.ReadString();
             BindingUid = reader.ReadInt32();
@@ -57,6 +54,9 @@ namespace GatewayStub.Api.Models.Dto
             Slots = DTOSerializer.NetDeserialize<NetList<SlotDto>>(reader);
             BlockId = reader.ReadString();
             IsPending = reader.ReadBoolean();
+			LevelupExperienceCost = reader.ReadInt32();
+			LevelupScrollsCost = reader.ReadInt32();
+			MaxLevel = reader.ReadInt16();
         }
     }
 }
