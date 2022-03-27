@@ -24,6 +24,7 @@
 		InventoryGetLootboxesList = 26,
 		InventoryOpenLootbox = 27,
 		InventoryGetItemsList = 28,
+		InventoryGetScrollsCount = 29,
 		HeroesGetHeroesList = 31,
 		InventoryAddedItemNotification = 32,
 		LobbyStartGame = 33,
@@ -50,7 +51,6 @@
         BalanceGetBalancesByUserIdAsArray = 57,
         BalanceGetListWithPagination = 58,
         Checkin = 127,
-        GetScrolls = 201,
         NonEquippableItemAddedNotification = 208,
         UndistributedExperienceAddedNotification = 210
     }

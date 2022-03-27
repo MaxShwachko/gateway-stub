@@ -1,23 +1,23 @@
 ﻿using GatewayStub.Api.HttpHandlers;
 using GatewayStub.Api.RequestHandlers;
 using GatewayStub.Api.RequestHandlers.Contract.Auth;
+using GatewayStub.Api.RequestHandlers.Contract.Balances;
 using GatewayStub.Api.RequestHandlers.Contract.GameBalancer;
 using GatewayStub.Api.RequestHandlers.Contract.ListeriaStorage;
 using GatewayStub.Api.RequestHandlers.Contract.Lobby;
 using GatewayStub.Api.RequestHandlers.Contract.Market;
 using GatewayStub.Api.RequestHandlers.Contract.Promo;
 using GatewayStub.Api.RequestHandlers.Contract.Purchase;
-using GatewayStub.Api.RequestHandlers.Contract.Test;
 using GatewayStub.Api.RequestHandlers.Contract.Transactions;
 using GatewayStub.Api.RequestReaders;
 using GatewayStub.Api.RequestReaders.Contract.Auth;
+using GatewayStub.Api.RequestReaders.Contract.Balances;
 using GatewayStub.Api.RequestReaders.Contract.GameBalancer;
 using GatewayStub.Api.RequestReaders.Contract.ListeriaStorage;
 using GatewayStub.Api.RequestReaders.Contract.Lobby;
 using GatewayStub.Api.RequestReaders.Contract.Market;
 using GatewayStub.Api.RequestReaders.Contract.Promo;
 using GatewayStub.Api.RequestReaders.Contract.Purchase;
-using GatewayStub.Api.RequestReaders.Contract.Test;
 using GatewayStub.Api.RequestReaders.Contract.Transactions;
 using GatewayStub.Core.Exchange;
 using GatewayStub.Core.Http;
@@ -82,14 +82,13 @@ namespace GatewayStub.Configuration
             container.AddSingleton<IContractRequestDataReader, BalanceGetBalanceByUserIdDataReader>();
             container.AddSingleton<IContractRequestDataReader, BalanceGetBalancesByUserIdAsArrayDataReader>();
             container.AddSingleton<IContractRequestDataReader, BalanceGetListWithPaginationDataReader>();
-            container.AddSingleton<IContractRequestDataReader, GetScrollsDataReader>();
-            container.AddSingleton<IContractRequestDataReader, GetUndistributedExperienceDataReader>();
-            container.AddSingleton<IContractRequestDataReader, LevelupHeroDataReader>();
-            container.AddSingleton<IContractRequestDataReader, SpendExperienceDataReader>();
-            container.AddSingleton<IContractRequestDataReader, GetAllHeroesListDataReader>();
-            container.AddSingleton<IContractRequestDataReader, GetLootboxesListDataReader>();
-            container.AddSingleton<IContractRequestDataReader, GetLootboxProductsDataReader>();
-            container.AddSingleton<IContractRequestDataReader, OpenLootboxDataReader>();
+            container.AddSingleton<IContractRequestDataReader, InventoryGetScrollsCountDataReader>();
+            container.AddSingleton<IContractRequestDataReader, BalancesGetFreeExperienceBalanceDataReader>();
+            container.AddSingleton<IContractRequestDataReader, HeroesLevelUpDataReader>();
+            container.AddSingleton<IContractRequestDataReader, HeroesGiveFreeExperienceToHeroDataReader>();
+            container.AddSingleton<IContractRequestDataReader, HeroesGetHeroesListDataReader>();
+            container.AddSingleton<IContractRequestDataReader, InventoryGetLootboxesListDataReader>();
+            container.AddSingleton<IContractRequestDataReader, InventoryOpenLootboxDataReader>();
 
             //ContractRequestHandlers
             container.AddSingleton<IContractRequestHandler, AuthAssignProviderAccountToDeviceIdHandler>();
@@ -127,14 +126,13 @@ namespace GatewayStub.Configuration
             container.AddSingleton<IContractRequestHandler, BalanceGetBalanceByUserIdHandler>();
             container.AddSingleton<IContractRequestHandler, BalanceGetBalancesByUserIdAsArrayHandler>();
             container.AddSingleton<IContractRequestHandler, BalanceGetListWithPaginationHandler>();
-            container.AddSingleton<IContractRequestHandler, GetScrollsHandler>();
-            container.AddSingleton<IContractRequestHandler, GetUndistributedExperienceHandler>();
+            container.AddSingleton<IContractRequestHandler, InventoryGetScrollsCountHandler>();
+            container.AddSingleton<IContractRequestHandler, BalancesGetFreeExperienceBalanceHandler>();
             container.AddSingleton<IContractRequestHandler, LevelupHeroHandler>();
-            container.AddSingleton<IContractRequestHandler, SpendExperienceHandler>();
-            container.AddSingleton<IContractRequestHandler, GetAllHeroesListHandler>();
-            container.AddSingleton<IContractRequestHandler, GetLootboxesListHandler>();
-            container.AddSingleton<IContractRequestHandler, GetLootboxProductsHandler>();
-            container.AddSingleton<IContractRequestHandler, OpenLootboxHandler>();
+            container.AddSingleton<IContractRequestHandler, HeroesGiveFreeExperienceToHeroHandler>();
+            container.AddSingleton<IContractRequestHandler, HeroesGetHeroesListHandler>();
+            container.AddSingleton<IContractRequestHandler, InventoryGetLootboxesListHandler>();
+            container.AddSingleton<IContractRequestHandler, InventoryOpenLootboxHandler>();
 
             //HttpHandlers
             container.AddSingleton<IHttpHandler, RoomOverHandler>();
