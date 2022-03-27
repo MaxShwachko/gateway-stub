@@ -51,6 +51,7 @@
         BalanceGetBalancesByUserIdAsArray = 57,
         BalanceGetListWithPagination = 58,
         Checkin = 127,
+		HeroStatsUpdatedNotification = 200,
         NonEquippableItemAddedNotification = 208,
         UndistributedExperienceAddedNotification = 210
     }

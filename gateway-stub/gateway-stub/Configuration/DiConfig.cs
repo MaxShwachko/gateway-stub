@@ -128,7 +128,7 @@ namespace GatewayStub.Configuration
             container.AddSingleton<IContractRequestHandler, BalanceGetListWithPaginationHandler>();
             container.AddSingleton<IContractRequestHandler, InventoryGetScrollsCountHandler>();
             container.AddSingleton<IContractRequestHandler, BalancesGetFreeExperienceBalanceHandler>();
-            container.AddSingleton<IContractRequestHandler, LevelupHeroHandler>();
+            container.AddSingleton<IContractRequestHandler, HeroesLevelUpHandler>();
             container.AddSingleton<IContractRequestHandler, HeroesGiveFreeExperienceToHeroHandler>();
             container.AddSingleton<IContractRequestHandler, HeroesGetHeroesListHandler>();
             container.AddSingleton<IContractRequestHandler, InventoryGetLootboxesListHandler>();
