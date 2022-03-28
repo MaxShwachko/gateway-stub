@@ -3,19 +3,19 @@ using GatewayStub.ByteFormatter;
 using GatewayStub.Core.Exchange;
 using GatewayStub.Domain.Enums;
 
-namespace GatewayStub.Api.Responses.Contract.Test
+namespace GatewayStub.Api.Responses.Contract.Lobby
 {
-    public class NonEquippableItemAddedNotification : AContractResponse
+    public class InventoryAddedUnequippableItemNotification : AContractResponse
     {
-        public override byte AgentId => (byte) EAgentId.Test;
-        public override byte MethodId => (byte) EMethodId.NonEquippableItemAddedNotification;
+        public override byte AgentId => (byte) EAgentId.Lobby;
+        public override byte MethodId => (byte) EMethodId.InventoryAddedUnequippableItemNotification;
 
         public readonly EGatewayErrorCode ErrorCode;
         public readonly ENonEquippableItemType Type;
         public readonly int ItemId;
         public readonly int BindingUid;
         
-        public NonEquippableItemAddedNotification(EGatewayErrorCode errorCode, ENonEquippableItemType type, int itemId, int bindingUid)
+        public InventoryAddedUnequippableItemNotification(EGatewayErrorCode errorCode, ENonEquippableItemType type, int itemId, int bindingUid)
         {
             ErrorCode = errorCode;
             Type = type;

@@ -29,7 +29,7 @@ namespace GatewayStub.Api.RequestHandlers.Contract.Lobby
             var statsUnequipHeroRequest = (StatsUnequipItemRequest) request;
             var equipment = _dataContext.Equipment;
             await _socket.Send(new StatsUnequipItemResponse(EGatewayErrorCode.Success, statsUnequipHeroRequest.BindingUid,
-                equipment.EquipmentBonuses, 0));
+                equipment.EquipmentBonuses, 1, statsUnequipHeroRequest.HeroBindingId));
         }
     }
 }

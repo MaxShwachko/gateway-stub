@@ -2,17 +2,17 @@
 using GatewayStub.ByteFormatter;
 using GatewayStub.Core.Exchange;
 
-namespace GatewayStub.Api.Responses.Contract.Test
+namespace GatewayStub.Api.Responses.Contract.Balances
 {
-    public class UndistributedExperienceAddedNotification : AContractResponse
+    public class BalancesFreeExperienceAddedNotification : AContractResponse
     {
-        public override byte AgentId => (byte) EAgentId.Test;
-        public override byte MethodId => (byte) EMethodId.UndistributedExperienceAddedNotification;
+        public override byte AgentId => (byte) EAgentId.Balances;
+        public override byte MethodId => (byte) EMethodId.BalancesFreeExperienceAddedNotification;
 
         public readonly EGatewayErrorCode ErrorCode;
         public readonly int Amount;
 
-        public UndistributedExperienceAddedNotification(EGatewayErrorCode errorCode, int amount)
+        public BalancesFreeExperienceAddedNotification(EGatewayErrorCode errorCode, int amount)
         {
             ErrorCode = errorCode;
             Amount = amount;

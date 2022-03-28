@@ -13,22 +13,25 @@ namespace GatewayStub.Api.Responses.Contract.Lobby
         public readonly EGatewayErrorCode ErrorCode;
         public readonly int BindingUid;
         public readonly HeroStatsDto EquipmentBonuses;
-        public readonly int SlotUid;
+        public readonly int SlotId;
+        public readonly int HeroUid;
 
-        public StatsUnequipItemResponse(EGatewayErrorCode errorCode, int bindingUid, HeroStatsDto equipmentBonuses, int slotUid)
+        public StatsUnequipItemResponse(EGatewayErrorCode errorCode, int bindingUid, HeroStatsDto equipmentBonuses, int slotId, int heroUid)
         {
             ErrorCode = errorCode;
             BindingUid = bindingUid;
             EquipmentBonuses = equipmentBonuses;
-            SlotUid = slotUid;
-        }
+			SlotId = slotId;
+			HeroUid = heroUid;
+		}
 
         protected override void WriteBody(ByteWriter writer)
         {
             writer.Write((int) ErrorCode);
             writer.Write(BindingUid);
             EquipmentBonuses.NetSerialize(writer);
-            writer.Write(SlotUid);
+            writer.Write(SlotId);
+            writer.Write(HeroUid);
         }
     }
 }
