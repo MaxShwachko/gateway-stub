@@ -5,16 +5,16 @@ using GatewayStub.Core.Exchange;
 
 namespace GatewayStub.Api.Responses.Contract.Test
 {
-	public class HeroStatsUpdatedNotification : AContractResponse
+	public class HeroesStatsUpdatedNotification : AContractResponse
 	{
-		public override byte AgentId => (byte) EAgentId.Test;
-		public override byte MethodId => (byte) EMethodId.HeroStatsUpdatedNotification;
+		public override byte AgentId => (byte) EAgentId.ListeriaStorage;
+		public override byte MethodId => (byte) EMethodId.HeroesStatsUpdatedNotification;
 
 		public readonly EGatewayErrorCode ErrorCode;
 		public readonly int HeroId;
 		public readonly HeroStatsDto Stats;
         
-		public HeroStatsUpdatedNotification(EGatewayErrorCode errorCode, int heroId, HeroStatsDto stats)
+		public HeroesStatsUpdatedNotification(EGatewayErrorCode errorCode, int heroId, HeroStatsDto stats)
 		{
 			ErrorCode = errorCode;
 			HeroId = heroId;

@@ -31,7 +31,7 @@ namespace GatewayStub.Api.RequestHandlers.Contract.ListeriaStorage
 			Console.WriteLine("HeroesLevelUp message received");
             var heroDto = _dataContext.Heroes.AvailableHeroes.FirstOrDefault(h => h.BindingUid == heroesLevelUpRequest.HeroUid);
             await _socket.Send(new HeroesLevelUpResponse(EGatewayErrorCode.Success, true));
-            await _socket.Send(new HeroStatsUpdatedNotification(EGatewayErrorCode.Success, heroDto.BindingUid, heroDto.HeroStats));
+            await _socket.Send(new HeroesStatsUpdatedNotification(EGatewayErrorCode.Success, heroDto.BindingUid, heroDto.HeroStats));
         }
     }
 }
