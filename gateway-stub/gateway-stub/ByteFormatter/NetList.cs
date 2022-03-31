@@ -7,14 +7,14 @@ namespace GatewayStub.ByteFormatter
 	{
 		public void NetSerialize(ByteWriter writer)
 		{
-			writer.Write((short) Count);
+			writer.Write(Count);
 			foreach (var v in this)
 				v.NetSerialize(writer);
 		}
 
 		public void NetDeserialize(ByteReader reader)
 		{
-			var count = reader.ReadInt16();
+			var count = reader.ReadInt32();
 			for (int i = 0; i < count; i++)
 			{
 				var data = new T();

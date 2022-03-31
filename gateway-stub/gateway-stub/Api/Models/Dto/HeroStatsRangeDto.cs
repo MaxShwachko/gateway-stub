@@ -6,10 +6,10 @@ namespace GatewayStub.Api.Models.Dto
 {
     public class HeroStatsRangeDto : INetSerialize
     {
+		public EMainStat MainStat;
         public int[] Strength;
         public int[] Agility;
         public int[] Intelligence;
-        public EMainStat MainStat;
         public int[] Health;
         public string[] HealthRegenPercent;
         public string[] Armor;
@@ -24,10 +24,10 @@ namespace GatewayStub.Api.Models.Dto
 
         public void NetSerialize(ByteWriter writer)
         {
+			writer.Write((byte) MainStat);
             writer.Write(Strength);
             writer.Write(Agility);
             writer.Write(Intelligence);
-            writer.Write((byte) MainStat);
             writer.Write(Health);
             writer.Write(HealthRegenPercent);
             writer.Write(Armor);
@@ -43,10 +43,10 @@ namespace GatewayStub.Api.Models.Dto
 
         public void NetDeserialize(ByteReader reader)
         {
+			MainStat = (EMainStat) reader.ReadByte();
             Strength = reader.ReadInt32Array();
             Agility = reader.ReadInt32Array();
             Intelligence = reader.ReadInt32Array();
-            MainStat = (EMainStat) reader.ReadByte();
             Health = reader.ReadInt32Array();
             HealthRegenPercent = reader.ReadStringArray();
             Armor = reader.ReadStringArray();
