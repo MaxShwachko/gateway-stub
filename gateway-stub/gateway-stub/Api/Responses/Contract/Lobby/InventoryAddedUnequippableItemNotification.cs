@@ -11,24 +11,24 @@ namespace GatewayStub.Api.Responses.Contract.Lobby
         public override byte MethodId => (byte) EMethodId.InventoryAddedUnequippableItemNotification;
 
         public readonly EGatewayErrorCode ErrorCode;
-        public readonly ENonEquippableItemType Type;
         public readonly int ItemId;
         public readonly int BindingUid;
+		public readonly EProductType Type;
         
-        public InventoryAddedUnequippableItemNotification(EGatewayErrorCode errorCode, ENonEquippableItemType type, int itemId, int bindingUid)
+        public InventoryAddedUnequippableItemNotification(EGatewayErrorCode errorCode, int itemId, int bindingUid, EProductType type)
         {
             ErrorCode = errorCode;
-            Type = type;
             ItemId = itemId;
             BindingUid = bindingUid;
+			Type = type;
         }
         
         protected override void WriteBody(ByteWriter writer)
         {
             writer.Write((int) ErrorCode);
-            writer.Write((int) Type);
             writer.Write(ItemId);
             writer.Write(BindingUid);
+			writer.Write((int) Type);
         }
     }
 }

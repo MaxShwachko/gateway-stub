@@ -6,7 +6,7 @@ namespace GatewayStub.Api.Models.Dto
 {
     public class LootboxRewardDto : INetSerialize
     {
-        public ELootboxRewardType Type;
+        public EProductType Type;
         public int Amount;
         public int ItemId;
 
@@ -19,7 +19,7 @@ namespace GatewayStub.Api.Models.Dto
 
         public void NetDeserialize(ByteReader reader)
         {
-            Type = (ELootboxRewardType) reader.ReadInt32();
+            Type = (EProductType) reader.ReadInt32();
             Amount = reader.ReadInt32();
             ItemId = reader.ReadInt32();
         }

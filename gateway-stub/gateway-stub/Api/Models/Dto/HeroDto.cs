@@ -1,5 +1,6 @@
 ﻿using GatewayStub.ByteFormatter;
 using GatewayStub.ByteFormatter.Interfaces;
+using GatewayStub.Domain.Enums;
 
 namespace GatewayStub.Api.Models.Dto
 {
@@ -8,7 +9,7 @@ namespace GatewayStub.Api.Models.Dto
         public byte HeroId;
         public short Level;
         public int Experience;
-        public bool IsActive;
+		public bool IsActive;
         public string TransactionHash;
         public int BindingUid;
         public string LinkToExplorer;
@@ -20,8 +21,9 @@ namespace GatewayStub.Api.Models.Dto
 		public int LevelupExperienceCost;
 		public int LevelupScrollsCost;
 		public short MaxLevel;
+		public EProductState State;
 
-        public void NetSerialize(ByteWriter writer)
+		public void NetSerialize(ByteWriter writer)
         {
             writer.Write(HeroId);
             writer.Write(Level);
@@ -38,6 +40,7 @@ namespace GatewayStub.Api.Models.Dto
 			writer.Write(LevelupExperienceCost);
 			writer.Write(LevelupScrollsCost);
 			writer.Write(MaxLevel);
+			writer.Write((int) State);
         }
 
         public void NetDeserialize(ByteReader reader)
@@ -57,6 +60,7 @@ namespace GatewayStub.Api.Models.Dto
 			LevelupExperienceCost = reader.ReadInt32();
 			LevelupScrollsCost = reader.ReadInt32();
 			MaxLevel = reader.ReadInt16();
+			State = (EProductState) reader.ReadInt32();
         }
     }
 }

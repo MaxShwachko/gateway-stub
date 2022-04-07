@@ -7,20 +7,20 @@ namespace GatewayStub.Domain.Models.Json
     [Serializable]
     public class HeroStats
     {
-        public int strength;
-        public int agility;
-        public int intelligence;
+        public string strength;
+        public string agility;
+        public string intelligence;
         public EMainStat mainStat;
-        public int health;
+        public string health;
         public string healthRegenPercent;
         public string armor;
         public string moveSpeed;
-        public int attackDamage;
+        public string attackDamage;
         public string attackReloadSpeed;
-        public int skillPower;
-        public int skillEffectPower;
-        public int ultPower;
-        public int ultEffectPower;
+        public string skillPower;
+        public string skillEffectPower;
+        public string ultPower;
+        public string ultEffectPower;
         public string vampirismPower;
 
         public static HeroStats FromDto(HeroStatsDto heroStatsDto)  //TODO : remove after AutoMapper adding

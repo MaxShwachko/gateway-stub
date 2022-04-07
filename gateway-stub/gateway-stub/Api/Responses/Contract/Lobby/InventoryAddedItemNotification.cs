@@ -11,34 +11,18 @@ namespace GatewayStub.Api.Responses.Contract.Lobby
         public override byte MethodId => (byte) EMethodId.InventoryAddedItemNotification;
 
         public readonly EGatewayErrorCode ErrorCode;
-        public readonly int EquipmentItemId;
-        public readonly int BindingUid;
-        public readonly string BlockId;
-        public readonly string TransactionHash;
-        public readonly string LinkToExplorer;
-        public readonly NetList<EquipmentEffectDto> Effects;
+		public readonly EquipmentItemDto Item;
 
-        public InventoryAddedItemNotification(EGatewayErrorCode errorCode, int equipmentItemId, int bindingUid,
-            string blockId, string transactionHash, string linkToExplorer, NetList<EquipmentEffectDto> effects)
+        public InventoryAddedItemNotification(EGatewayErrorCode errorCode, EquipmentItemDto item)
         {
             ErrorCode = errorCode;
-            EquipmentItemId = equipmentItemId;
-            BindingUid = bindingUid;
-            BlockId = blockId;
-            TransactionHash = transactionHash;
-            LinkToExplorer = linkToExplorer;
-            Effects = effects;
-        }
+			Item = item;
+		}
 
         protected override void WriteBody(ByteWriter writer)
         {
             writer.Write((int) ErrorCode);
-            writer.Write(EquipmentItemId);
-            writer.Write(BindingUid);
-            writer.Write(BlockId);
-            writer.Write(TransactionHash);
-            writer.Write(LinkToExplorer);
-            Effects.NetSerialize(writer);
+            Item.NetSerialize(writer);
         }
     }
 }

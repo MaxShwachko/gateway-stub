@@ -7,19 +7,19 @@ namespace GatewayStub.Api.Models.Dto
     public class HeroStatsRangeDto : INetSerialize
     {
 		public EMainStat MainStat;
-        public int[] Strength;
-        public int[] Agility;
-        public int[] Intelligence;
-        public int[] Health;
+        public string[] Strength;
+        public string[] Agility;
+        public string[] Intelligence;
+        public string[] Health;
         public string[] HealthRegenPercent;
         public string[] Armor;
         public string[] MoveSpeed;
-        public int[] AttackDamage;
+        public string[] AttackDamage;
         public string[] AttackReloadSpeed;
-        public int[] SkillPower;
-        public int[] SkillEffectPower;
-        public int[] UltPower;
-        public int[] UltEffectPower;
+        public string[] SkillPower;
+        public string[] SkillEffectPower;
+        public string[] UltPower;
+        public string[] UltEffectPower;
         public string[] VampirismPower;
 
         public void NetSerialize(ByteWriter writer)
@@ -44,19 +44,19 @@ namespace GatewayStub.Api.Models.Dto
         public void NetDeserialize(ByteReader reader)
         {
 			MainStat = (EMainStat) reader.ReadByte();
-            Strength = reader.ReadInt32Array();
-            Agility = reader.ReadInt32Array();
-            Intelligence = reader.ReadInt32Array();
-            Health = reader.ReadInt32Array();
+            Strength = reader.ReadStringArray();
+            Agility = reader.ReadStringArray();
+            Intelligence = reader.ReadStringArray();
+            Health = reader.ReadStringArray();
             HealthRegenPercent = reader.ReadStringArray();
             Armor = reader.ReadStringArray();
             MoveSpeed = reader.ReadStringArray();
-            AttackDamage = reader.ReadInt32Array();
+            AttackDamage = reader.ReadStringArray();
             AttackReloadSpeed = reader.ReadStringArray();
-            SkillPower = reader.ReadInt32Array();
-            SkillEffectPower = reader.ReadInt32Array();
-            UltPower = reader.ReadInt32Array();
-            UltEffectPower = reader.ReadInt32Array();
+            SkillPower = reader.ReadStringArray();
+            SkillEffectPower = reader.ReadStringArray();
+            UltPower = reader.ReadStringArray();
+            UltEffectPower = reader.ReadStringArray();
             VampirismPower = reader.ReadStringArray();
         }
     }
