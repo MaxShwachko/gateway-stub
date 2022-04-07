@@ -10,5 +10,6 @@ namespace GatewayStub.Domain.Models.Dao
         public int EquippedItemSlotUid;
         public int EquippedItemHeroUid;
         public HeroStatsDto EquipmentBonuses;
+		public int ItemScrollsAmount;
     }
 }

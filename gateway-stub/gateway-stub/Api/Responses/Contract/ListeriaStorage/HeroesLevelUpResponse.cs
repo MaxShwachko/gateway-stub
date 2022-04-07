@@ -6,7 +6,7 @@ namespace GatewayStub.Api.Responses.Contract.ListeriaStorage
 {
     public class HeroesLevelUpResponse : AContractResponse
     {
-        public override byte AgentId => (byte) EAgentId.Test;
+        public override byte AgentId => (byte) EAgentId.ListeriaStorage;
         public override byte MethodId => (byte) EMethodId.HeroesLevelUp;
 
         public readonly EGatewayErrorCode ErrorCode;

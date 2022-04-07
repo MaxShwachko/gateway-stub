@@ -8,6 +8,7 @@ using GatewayStub.Api.RequestHandlers.Contract.Lobby;
 using GatewayStub.Api.RequestHandlers.Contract.Market;
 using GatewayStub.Api.RequestHandlers.Contract.Promo;
 using GatewayStub.Api.RequestHandlers.Contract.Purchase;
+using GatewayStub.Api.RequestHandlers.Contract.Test;
 using GatewayStub.Api.RequestHandlers.Contract.Transactions;
 using GatewayStub.Api.RequestReaders;
 using GatewayStub.Api.RequestReaders.Contract.Auth;
@@ -18,6 +19,7 @@ using GatewayStub.Api.RequestReaders.Contract.Lobby;
 using GatewayStub.Api.RequestReaders.Contract.Market;
 using GatewayStub.Api.RequestReaders.Contract.Promo;
 using GatewayStub.Api.RequestReaders.Contract.Purchase;
+using GatewayStub.Api.RequestReaders.Contract.Test;
 using GatewayStub.Api.RequestReaders.Contract.Transactions;
 using GatewayStub.Core.Exchange;
 using GatewayStub.Core.Http;
@@ -89,6 +91,8 @@ namespace GatewayStub.Configuration
             container.AddSingleton<IContractRequestDataReader, HeroesGetHeroesListDataReader>();
             container.AddSingleton<IContractRequestDataReader, InventoryGetLootboxesListDataReader>();
             container.AddSingleton<IContractRequestDataReader, InventoryOpenLootboxDataReader>();
+			container.AddSingleton<IContractRequestDataReader, InventoryGetItemScrollsCountDataReader>();
+			container.AddSingleton<IContractRequestDataReader, ItemLevelUpDataReader>();
 
             //ContractRequestHandlers
             container.AddSingleton<IContractRequestHandler, AuthAssignProviderAccountToDeviceIdHandler>();
@@ -133,6 +137,8 @@ namespace GatewayStub.Configuration
             container.AddSingleton<IContractRequestHandler, HeroesGetHeroesListHandler>();
             container.AddSingleton<IContractRequestHandler, InventoryGetLootboxesListHandler>();
             container.AddSingleton<IContractRequestHandler, InventoryOpenLootboxHandler>();
+			container.AddSingleton<IContractRequestHandler, InventoryGetItemScrollsCountHandler>();
+			container.AddSingleton<IContractRequestHandler, ItemLevelUpHandler>();
 
             //HttpHandlers
             container.AddSingleton<IHttpHandler, RoomOverHandler>();

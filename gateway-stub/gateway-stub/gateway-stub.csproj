@@ -6,9 +6,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Api\RequestHandlers\Contract\Test" />
-      <Folder Include="Api\RequestReaders\Contract\Test" />
-      <Folder Include="Api\Requests\Contract\Test" />
       <Folder Include="ByteFormatter\Interfaces" />
     </ItemGroup>
 

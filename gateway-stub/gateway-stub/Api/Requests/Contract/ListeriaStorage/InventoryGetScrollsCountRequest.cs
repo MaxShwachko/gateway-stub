@@ -1,6 +1,6 @@
 ﻿using GatewayStub.Core.Exchange;
 
-namespace GatewayStub.Api.Requests.Contract.Test
+namespace GatewayStub.Api.Requests.Contract.ListeriaStorage
 {
     public class InventoryGetScrollsCountRequest : IContractRequestData
     {

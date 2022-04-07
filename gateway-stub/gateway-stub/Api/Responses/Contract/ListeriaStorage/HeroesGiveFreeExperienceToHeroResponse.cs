@@ -2,7 +2,7 @@
 using GatewayStub.ByteFormatter;
 using GatewayStub.Core.Exchange;
 
-namespace GatewayStub.Api.Responses.Contract.Test
+namespace GatewayStub.Api.Responses.Contract.ListeriaStorage
 {
     public class HeroesGiveFreeExperienceToHeroResponse : AContractResponse
     {

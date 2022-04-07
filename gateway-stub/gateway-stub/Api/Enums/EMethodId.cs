@@ -54,5 +54,8 @@
         BalanceGetBalancesByUserIdAsArray = 60,
         BalanceGetListWithPagination = 61,
         Checkin = 127,
+		InventoryGetItemScrollsCount = 200,
+		ItemLevelUp = 201,
+		ItemStatsUpdatedNotification = 202,
     }
 }

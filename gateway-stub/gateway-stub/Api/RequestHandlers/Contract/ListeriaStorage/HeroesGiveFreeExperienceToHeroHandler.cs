@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using GatewayStub.Api.Enums;
+using GatewayStub.Api.Responses.Contract.ListeriaStorage;
 using GatewayStub.Api.Responses.Contract.Test;
 using GatewayStub.Core.Exchange;
 using GatewayStub.Core.WebSocket;

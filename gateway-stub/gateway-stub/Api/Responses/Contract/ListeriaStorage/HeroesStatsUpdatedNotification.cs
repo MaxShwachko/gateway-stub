@@ -3,7 +3,7 @@ using GatewayStub.Api.Models.Dto;
 using GatewayStub.ByteFormatter;
 using GatewayStub.Core.Exchange;
 
-namespace GatewayStub.Api.Responses.Contract.Test
+namespace GatewayStub.Api.Responses.Contract.ListeriaStorage
 {
 	public class HeroesStatsUpdatedNotification : AContractResponse
 	{
@@ -11,21 +11,18 @@ namespace GatewayStub.Api.Responses.Contract.Test
 		public override byte MethodId => (byte) EMethodId.HeroesStatsUpdatedNotification;
 
 		public readonly EGatewayErrorCode ErrorCode;
-		public readonly int HeroId;
-		public readonly HeroStatsDto Stats;
+		public readonly HeroDto Hero;
         
-		public HeroesStatsUpdatedNotification(EGatewayErrorCode errorCode, int heroId, HeroStatsDto stats)
+		public HeroesStatsUpdatedNotification(EGatewayErrorCode errorCode, HeroDto hero)
 		{
 			ErrorCode = errorCode;
-			HeroId = heroId;
-			Stats = stats;
+			Hero = hero;
 		}
         
 		protected override void WriteBody(ByteWriter writer)
 		{
 			writer.Write((int) ErrorCode);
-			writer.Write(HeroId);
-			Stats.NetSerialize(writer);
+			Hero.NetSerialize(writer);
 		}
 	}
 }

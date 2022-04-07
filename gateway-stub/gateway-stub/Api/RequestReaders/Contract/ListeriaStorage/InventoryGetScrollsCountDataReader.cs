@@ -1,4 +1,5 @@
 ﻿using GatewayStub.Api.Enums;
+using GatewayStub.Api.Requests.Contract.ListeriaStorage;
 using GatewayStub.Api.Requests.Contract.Test;
 using GatewayStub.ByteFormatter;
 using GatewayStub.Core.Exchange;
