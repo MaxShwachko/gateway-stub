@@ -57,5 +57,14 @@
 		InventoryGetItemScrollsCount = 200,
 		ItemLevelUp = 201,
 		ItemStatsUpdatedNotification = 202,
-    }
+		GetBattlePassData = 203,
+		GetCurrentBattlePassExperience = 204,
+		GetBattlePassSeasonInfo = 205,
+		GetBattlePassPrices = 206,
+		BattlePassExperienceUpdatedNotification = 207,
+		ClaimBattlePassReward = 208,
+		ClaimAllOldBattlePassRewards = 209,
+		PurchaseBattlePassExperienceToLevelup = 210,
+		UpgradeBattlePassType = 211,
+	}
 }

@@ -17,6 +17,7 @@ namespace GatewayStub.Domain.Data
         SettingsDao Settings { get; set; }
         UserDao User { get; set; }
         LootboxesDao Lootboxes { get; set; }
+        BattlePassDao BattlePass { get; set; }
     }
 
 }

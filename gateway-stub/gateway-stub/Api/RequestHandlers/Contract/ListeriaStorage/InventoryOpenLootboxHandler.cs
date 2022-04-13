@@ -26,7 +26,7 @@ namespace GatewayStub.Api.RequestHandlers.Contract.ListeriaStorage
         {
             Console.WriteLine("InventoryOpenLootbox message received");
             await _socket.Send(new InventoryOpenLootboxResponse(EGatewayErrorCode.Success));
-            await _socket.Send(new ProductLootboxOpenedNotification(EGatewayErrorCode.Success, new NetList<LootboxRewardDto>()));	// TODO : add lootbox rewards to data context from stage
+            await _socket.Send(new ProductLootboxOpenedNotification(EGatewayErrorCode.Success, new NetList<ItemDto>()));	// TODO : add lootbox rewards to data context from stage
         }
     }
 }

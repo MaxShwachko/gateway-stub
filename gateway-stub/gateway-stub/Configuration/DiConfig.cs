@@ -93,6 +93,14 @@ namespace GatewayStub.Configuration
             container.AddSingleton<IContractRequestDataReader, InventoryOpenLootboxDataReader>();
 			container.AddSingleton<IContractRequestDataReader, InventoryGetItemScrollsCountDataReader>();
 			container.AddSingleton<IContractRequestDataReader, ItemLevelUpDataReader>();
+			container.AddSingleton<IContractRequestDataReader, GetBattlePassDataDataReader>();
+			container.AddSingleton<IContractRequestDataReader, GetCurrentBattlePassExperienceDataReader>();
+			container.AddSingleton<IContractRequestDataReader, GetBattlePassSeasonInfoDataReader>();
+			container.AddSingleton<IContractRequestDataReader, GetBattlePassPricesDataReader>();
+			container.AddSingleton<IContractRequestDataReader, ClaimBattlePassRewardDataReader>();
+			container.AddSingleton<IContractRequestDataReader, ClaimAllOldBattlePassRewardsDataReader>();
+			container.AddSingleton<IContractRequestDataReader, PurchaseBattlePassExperienceToLevelupDataReader>();
+			container.AddSingleton<IContractRequestDataReader, UpgradeBattlePassTypeDataReader>();
 
             //ContractRequestHandlers
             container.AddSingleton<IContractRequestHandler, AuthAssignProviderAccountToDeviceIdHandler>();
@@ -139,6 +147,14 @@ namespace GatewayStub.Configuration
             container.AddSingleton<IContractRequestHandler, InventoryOpenLootboxHandler>();
 			container.AddSingleton<IContractRequestHandler, InventoryGetItemScrollsCountHandler>();
 			container.AddSingleton<IContractRequestHandler, ItemLevelUpHandler>();
+			container.AddSingleton<IContractRequestHandler, GetBattlePassDataHandler>();
+			container.AddSingleton<IContractRequestHandler, GetCurrentBattlePassExperienceHandler>();
+			container.AddSingleton<IContractRequestHandler, GetBattlePassSeasonInfoHandler>();
+			container.AddSingleton<IContractRequestHandler, GetBattlePassPricesHandler>();
+			container.AddSingleton<IContractRequestHandler, ClaimBattlePassRewardHandler>();
+			container.AddSingleton<IContractRequestHandler, ClaimAllOldBattlePassRewardsHandler>();
+			container.AddSingleton<IContractRequestHandler, PurchaseBattlePassExperienceToLevelupHandler>();
+			container.AddSingleton<IContractRequestHandler, UpgradeBattlePassTypeHandler>();
 
             //HttpHandlers
             container.AddSingleton<IHttpHandler, RoomOverHandler>();

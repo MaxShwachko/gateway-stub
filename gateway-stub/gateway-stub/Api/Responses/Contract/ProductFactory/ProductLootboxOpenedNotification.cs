@@ -11,9 +11,9 @@ namespace GatewayStub.Api.Responses.Contract.ProductFactory
         public override byte MethodId => (byte) EMethodId.ProductLootboxOpenedNotification;
 
         public readonly EGatewayErrorCode ErrorCode;
-        public readonly NetList<LootboxRewardDto> Rewards;
+        public readonly NetList<ItemDto> Rewards;
 
-        public ProductLootboxOpenedNotification(EGatewayErrorCode errorCode, NetList<LootboxRewardDto> rewards)
+        public ProductLootboxOpenedNotification(EGatewayErrorCode errorCode, NetList<ItemDto> rewards)
         {
             ErrorCode = errorCode;
             Rewards = rewards;

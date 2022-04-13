@@ -21,8 +21,9 @@ namespace GatewayStub.Domain.Data.Impls
         public SettingsDao Settings { get; set; }
         public UserDao User { get; set; }
         public LootboxesDao Lootboxes { get; set; }
+		public BattlePassDao BattlePass { get; set; }
 
-        public DataContext()
+		public DataContext()
         {
             Regions = new RegionsDao
             {
@@ -841,6 +842,120 @@ namespace GatewayStub.Domain.Data.Impls
                     },
                 },
             };
-        }
+
+			BattlePass = new BattlePassDao
+			{
+				Progression = new BattlePassProgressionDto
+				{
+					Levels = new NetList<BattlePassLevelDto>
+					{
+						new BattlePassLevelDto
+						{
+							Level = 1,
+							Experience = 100,
+							RewardsList = new NetList<BattlePassRewardDto>
+							{
+								new BattlePassRewardDto
+								{
+									RewardId = 1,
+									BattlePassType = EBattlePassType.Free,
+									ItemReward = new ItemDto
+									{
+										ItemId = 1,
+										Type = EProductType.Hero,
+										Amount = 1
+									}
+								},
+								new BattlePassRewardDto
+								{
+									RewardId = 2,
+									BattlePassType = EBattlePassType.Premiumm,
+									ItemReward = new ItemDto
+									{
+										ItemId = 4,
+										Type = EProductType.Hero,
+										Amount = 1
+									}
+								}
+							}
+						},
+						new BattlePassLevelDto
+						{
+							Level = 2,
+							Experience = 300,
+							RewardsList = new NetList<BattlePassRewardDto>
+							{
+								new BattlePassRewardDto
+								{
+									RewardId = 3,
+									BattlePassType = EBattlePassType.Free,
+									ItemReward = new ItemDto
+									{
+										ItemId = 1,
+										Type = EProductType.Equipment,
+										Amount = 1
+									}
+								},
+								new BattlePassRewardDto
+								{
+									RewardId = 4,
+									BattlePassType = EBattlePassType.Premiumm,
+									ItemReward = new ItemDto
+									{
+										ItemId = 4,
+										Type = EProductType.Equipment,
+										Amount = 1
+									}
+								}
+							}
+						}
+					},
+					FinalRewardExperienceInterval = 100
+				},
+				UserRewards = new NetList<UserBattlePassRewardDto>
+				{
+					new UserBattlePassRewardDto
+					{
+						RewardId = 1,
+						RewardBindingId = 1,
+						State = EBattlePassRewardState.Available
+					},
+					new UserBattlePassRewardDto
+					{
+						RewardId = 2,
+						RewardBindingId = 2,
+						State = EBattlePassRewardState.Claimed
+					},
+				},
+				OldRewards = new NetList<BattlePassRewardDto>
+				{
+					
+				},
+				CurrentSeason = new BattlePassSeasonDto
+				{
+					SeasonId = 1,
+					State = EBattlePassSeasonState.Open,
+					HasUnclaimedOldRewards = false,
+					StateUpdateDate = 4102437600000
+				},
+				Prices = new BattlePassPricesDto
+				{
+					ExperiencePrice = "100",
+					Prices = new NetList<BattlePassPriceDto>
+					{
+						new BattlePassPriceDto
+						{
+							Type = EBattlePassType.Free,
+							Price = "0"
+						},
+						new BattlePassPriceDto
+						{
+							Type = EBattlePassType.Premiumm,
+							Price = "50"
+						}
+					}
+				}
+			};
+		}
     }
 }
