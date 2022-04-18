@@ -2,6 +2,7 @@
 {
 	public enum EBattlePassType
 	{
+    	Common,
 		Free,
 		Premiumm
 	}

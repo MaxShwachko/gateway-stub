@@ -584,19 +584,16 @@ namespace GatewayStub.Domain.Data.Impls
                         {
                             new SlotDto
                             {
-                                BindingUid = 1,
                                 Type = EEquipmentType.Weapon,
                                 ItemUid = 0,
                             },
                             new SlotDto
                             {
-                                BindingUid = 2,
                                 Type = EEquipmentType.Armor,
                                 ItemUid = 0,
                             },
                             new SlotDto
                             {
-                                BindingUid = 3,
                                 Type = EEquipmentType.Amulet,
                                 ItemUid = 0,
                             }
@@ -656,19 +653,16 @@ namespace GatewayStub.Domain.Data.Impls
                         {
                             new SlotDto
                             {
-                                BindingUid = 4,
                                 Type = EEquipmentType.Weapon,
                                 ItemUid = 0,
                             },
                             new SlotDto
                             {
-                                BindingUid = 5,
                                 Type = EEquipmentType.Armor,
                                 ItemUid = 0,
                             },
                             new SlotDto
                             {
-                                BindingUid = 6,
                                 Type = EEquipmentType.Amulet,
                                 ItemUid = 0,
                             }
@@ -728,19 +722,16 @@ namespace GatewayStub.Domain.Data.Impls
                         {
                             new SlotDto
                             {
-                                BindingUid = 7,
                                 Type = EEquipmentType.Weapon,
                                 ItemUid = 0,
                             },
                             new SlotDto
                             {
-                                BindingUid = 8,
                                 Type = EEquipmentType.Armor,
                                 ItemUid = 0,
                             },
                             new SlotDto
                             {
-                                BindingUid = 9,
                                 Type = EEquipmentType.Amulet,
                                 ItemUid = 0,
                             }

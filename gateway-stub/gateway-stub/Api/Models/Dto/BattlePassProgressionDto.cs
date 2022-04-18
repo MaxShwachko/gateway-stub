@@ -7,17 +7,20 @@ namespace GatewayStub.Api.Models.Dto
 	{
 		public NetList<BattlePassLevelDto> Levels;
 		public int FinalRewardExperienceInterval;
+		public BattlePassRewardDto FinalReward;
 
 		public void NetSerialize(ByteWriter writer)
 		{
 			Levels.NetSerialize(writer);
 			writer.Write(FinalRewardExperienceInterval);
+			FinalReward.NetSerialize(writer);
 		}
 
 		public void NetDeserialize(ByteReader reader)
 		{
 			Levels = DTOSerializer.NetDeserialize<NetList<BattlePassLevelDto>>(reader);
 			FinalRewardExperienceInterval = reader.ReadInt32();
+			FinalReward = DTOSerializer.NetDeserialize<BattlePassRewardDto>(reader);
 		}
 	}
 }
