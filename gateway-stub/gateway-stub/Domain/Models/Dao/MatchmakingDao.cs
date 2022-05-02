@@ -13,6 +13,5 @@ namespace GatewayStub.Domain.Models.Dao
         public byte TeamId;
         public string ApiVersion;
         public string RoomHost;
-        public int ProxyTcpPort;
     }
 }

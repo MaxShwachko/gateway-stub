@@ -70,15 +70,15 @@ namespace GatewayStub.Domain.Data.Impls
                 AuthToken = "authToken1",
                 TeamId = 1,
                 RoomHost = "127.0.0.1",
-                ProxyTcpPort = 7775,
                 RoomConfig = new RoomConfig
                 {
-                    balancerMessage = "message",
+                    roomReadyMessage = "message",
                     balancerUrl = "http://localhost:5000",
-                    proxyIp = "127.0.0.1",
+                    roomReadyRoute = "/ready",
+                    battleOverRoute = "/over",
                     roomId = 1,
-                    roomPort = 10520,
-                    tcpPort = 7776,
+                    gameUdpPort = 10520,
+                    gameTcpPort = 7776,
                     players = new List<Player>()
                     {
                         new Player

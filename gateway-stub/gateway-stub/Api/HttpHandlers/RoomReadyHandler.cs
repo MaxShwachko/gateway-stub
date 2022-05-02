@@ -34,11 +34,10 @@ namespace GatewayStub.Api.HttpHandlers
             var checkinSuccess = _dataContext.Matchmaking.CheckinSuccess;
             var apiVersion = _dataContext.Matchmaking.ApiVersion;
             var authToken = _dataContext.Matchmaking.AuthToken;
-            var proxyIp = _matchmakingService.RoomConfig.proxyIp;
-            var tcpPort = _dataContext.Matchmaking.ProxyTcpPort;
             var roomId = _matchmakingService.RoomConfig.roomId;
             var roomHost = _dataContext.Matchmaking.RoomHost;
-            var roomPort = _matchmakingService.RoomConfig.roomPort;
+            var gameUdpPort = _matchmakingService.RoomConfig.gameUdpPort;
+            var gameTcpPort = _matchmakingService.RoomConfig.gameTcpPort;
             var teamId = _dataContext.Matchmaking.TeamId;
             var players = _matchmakingService.RoomConfig.players;
             var playersList = new NetList<PlayerDataDto>(); //TODO : remove after AutoMapper adding
@@ -68,7 +67,7 @@ namespace GatewayStub.Api.HttpHandlers
             }));
 
             await _socket.Send(new Checkin(
-                    checkinSuccess, apiVersion, authToken, proxyIp, tcpPort, roomId, roomHost, roomPort, teamId, playersList));
+                    checkinSuccess, apiVersion, authToken, roomId, roomHost, gameTcpPort, gameUdpPort, teamId, playersList));
             return StatusCodes.Status200OK;
         }
     }

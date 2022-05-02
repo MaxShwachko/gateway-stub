@@ -13,24 +13,22 @@ namespace GatewayStub.Api.Responses.Contract.Room
         public readonly bool Success;
         public readonly string ApiVersion;
         public readonly string AuthToken;
-        public readonly string ProxyIp;
-        public readonly int ProxyTcpPort;
         public readonly int RoomId;
         public readonly string RoomHost;
-        public readonly int RoomPort;
+        public readonly int RoomTcpPort;
+        public readonly int RoomUdpPort;
         public readonly byte TeamId;
         public readonly NetList<PlayerDataDto> Players;
 
-        public Checkin(bool success, string apiVersion, string authToken, string proxyIp, int proxyTcpPort, int roomId, string roomHost, int roomPort, byte teamId, NetList<PlayerDataDto> players)
+        public Checkin(bool success, string apiVersion, string authToken, int roomId, string roomHost, int roomTcpPort, int roomUdpPort, byte teamId, NetList<PlayerDataDto> players)
         {
             Success = success;
             ApiVersion = apiVersion;
             AuthToken = authToken;
-            ProxyIp = proxyIp;
-            ProxyTcpPort = proxyTcpPort;
             RoomId = roomId;
             RoomHost = roomHost;
-            RoomPort = roomPort;
+            RoomTcpPort = roomTcpPort;
+            RoomUdpPort = roomUdpPort;
             TeamId = teamId;
             Players = players;
         }
@@ -40,11 +38,10 @@ namespace GatewayStub.Api.Responses.Contract.Room
             writer.Write(Success);
             writer.Write(ApiVersion);
             writer.Write(AuthToken);
-            writer.Write(ProxyIp);
-            writer.Write(ProxyTcpPort);
             writer.Write(RoomId);
             writer.Write(RoomHost);
-            writer.Write(RoomPort);
+            writer.Write(RoomTcpPort);
+            writer.Write(RoomUdpPort);
             writer.Write(TeamId);
             Players.NetSerialize(writer);
         }

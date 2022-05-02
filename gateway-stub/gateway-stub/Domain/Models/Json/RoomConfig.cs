@@ -7,11 +7,12 @@ namespace GatewayStub.Domain.Models.Json
     public class RoomConfig : ICloneable
     {
         public int roomId;
-        public int tcpPort;
-        public int roomPort;
+        public int gameTcpPort;
+        public int gameUdpPort;
         public string balancerUrl;
-        public string balancerMessage;
-        public string proxyIp;
+        public string roomReadyRoute;
+        public string battleOverRoute;
+        public string roomReadyMessage;
         public List<Player> players;
 
         public object Clone()
@@ -19,11 +20,12 @@ namespace GatewayStub.Domain.Models.Json
             var clone = new RoomConfig
             {
                 roomId = this.roomId,
-                tcpPort = this.tcpPort,
-                roomPort = this.roomPort,
+                gameTcpPort = this.gameTcpPort,
+                gameUdpPort = this.gameUdpPort,
                 balancerUrl = this.balancerUrl,
-                balancerMessage = this.balancerMessage,
-                proxyIp = this.proxyIp,
+                roomReadyRoute = this.roomReadyRoute,
+                battleOverRoute = this.battleOverRoute,
+                roomReadyMessage = this.roomReadyMessage,
                 players = this.players
             };
 
