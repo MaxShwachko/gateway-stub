@@ -2,12 +2,12 @@
 using GatewayStub.ByteFormatter;
 using GatewayStub.Core.Exchange;
 
-namespace GatewayStub.Api.Responses.Contract.Test
+namespace GatewayStub.Api.Responses.Contract.ListeriaStorage
 {
 	public class InventoryGetItemScrollsCountResponse : AContractResponse
 	{
-		public override byte AgentId => (byte) EAgentId.Test;
-		public override byte MethodId => (byte) EMethodId.InventoryGetItemScrollsCount;
+		public override byte AgentId => (byte) EAgentId.ListeriaStorage;
+		public override byte MethodId => (byte) EMethodId.InventoryEndpointsGetEquipmentScrollsCount;
 
 		public readonly EGatewayErrorCode ErrorCode;
 		public readonly int Amount;

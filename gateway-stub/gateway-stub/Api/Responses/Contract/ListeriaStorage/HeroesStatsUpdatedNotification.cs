@@ -2,6 +2,7 @@
 using GatewayStub.Api.Models.Dto;
 using GatewayStub.ByteFormatter;
 using GatewayStub.Core.Exchange;
+using GatewayStub.Domain.Enums;
 
 namespace GatewayStub.Api.Responses.Contract.ListeriaStorage
 {
@@ -12,17 +13,20 @@ namespace GatewayStub.Api.Responses.Contract.ListeriaStorage
 
 		public readonly EGatewayErrorCode ErrorCode;
 		public readonly HeroDto Hero;
+		public readonly EStatsUpdateReason Reason;
         
-		public HeroesStatsUpdatedNotification(EGatewayErrorCode errorCode, HeroDto hero)
+		public HeroesStatsUpdatedNotification(EGatewayErrorCode errorCode, HeroDto hero, EStatsUpdateReason reason)
 		{
 			ErrorCode = errorCode;
 			Hero = hero;
+			Reason = reason;
 		}
         
 		protected override void WriteBody(ByteWriter writer)
 		{
 			writer.Write((int) ErrorCode);
 			Hero.NetSerialize(writer);
+			writer.Write((int) Reason);
 		}
 	}
 }

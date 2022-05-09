@@ -7,10 +7,11 @@ namespace GatewayStub.Api.Responses.Contract.Room
 {
     public class Checkin : AContractResponse
     {
-        public override byte AgentId => (byte) EAgentId.Room;
+        public override byte AgentId => (byte) EAgentId.GameBalancer;
         public override byte MethodId => (byte) EMethodId.Checkin;
-        
-        public readonly bool Success;
+
+		public readonly EGatewayErrorCode ErrorCode;
+		public readonly bool Success;
         public readonly string ApiVersion;
         public readonly string AuthToken;
         public readonly int RoomId;
@@ -20,8 +21,9 @@ namespace GatewayStub.Api.Responses.Contract.Room
         public readonly byte TeamId;
         public readonly NetList<PlayerDataDto> Players;
 
-        public Checkin(bool success, string apiVersion, string authToken, int roomId, string roomHost, int roomTcpPort, int roomUdpPort, byte teamId, NetList<PlayerDataDto> players)
-        {
+        public Checkin(EGatewayErrorCode errorCode, bool success, string apiVersion, string authToken, int roomId, string roomHost, int roomTcpPort, int roomUdpPort, byte teamId, NetList<PlayerDataDto> players)
+		{
+			ErrorCode = errorCode;
             Success = success;
             ApiVersion = apiVersion;
             AuthToken = authToken;
@@ -35,6 +37,7 @@ namespace GatewayStub.Api.Responses.Contract.Room
 
         protected override void WriteBody(ByteWriter writer)
         {
+            writer.Write((int) ErrorCode);
             writer.Write(Success);
             writer.Write(ApiVersion);
             writer.Write(AuthToken);

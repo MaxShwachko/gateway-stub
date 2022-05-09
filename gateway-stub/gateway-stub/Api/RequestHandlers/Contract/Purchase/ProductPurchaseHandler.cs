@@ -11,8 +11,8 @@ namespace GatewayStub.Api.RequestHandlers.Contract.Purchase
 {
     public class ProductPurchaseHandler : IContractRequestHandler
     {
-        public byte AgentId => (byte) EAgentId.Purchase;
-        public byte MethodId => (byte) EMethodId.ProductPurchase;
+        public byte AgentId => (byte) EAgentId.NewPurchase;
+        public byte MethodId => (byte) EMethodId.ProductPurchaseLootbox;
                 
         private readonly IWebSocketWrapper _socket;
         private readonly IDataContext _dataContext;

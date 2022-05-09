@@ -8,7 +8,7 @@ namespace GatewayStub.Api.RequestReaders.Contract.Lobby
     public class StatsUnequipItemDataReader : IContractRequestDataReader
     {
         public byte AgentId => (byte) EAgentId.Lobby;
-        public byte MethodId => (byte) EMethodId.StatsUnequipItem;
+        public byte MethodId => (byte) EMethodId.EquipmentEndpointsUnequipItem;
         
         public IContractRequestData ReadRequest(ByteReader reader)
         {

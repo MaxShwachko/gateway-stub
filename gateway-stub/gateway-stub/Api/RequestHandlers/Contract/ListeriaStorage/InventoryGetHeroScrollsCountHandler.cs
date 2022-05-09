@@ -9,15 +9,15 @@ using GatewayStub.Domain.Data;
 
 namespace GatewayStub.Api.RequestHandlers.Contract.ListeriaStorage
 {
-    public class InventoryGetScrollsCountHandler : IContractRequestHandler
+    public class InventoryGetHeroScrollsCountHandler : IContractRequestHandler
     {
         public byte AgentId => (byte) EAgentId.ListeriaStorage;
-        public byte MethodId => (byte) EMethodId.InventoryGetScrollsCount;
+        public byte MethodId => (byte) EMethodId.InventoryGetHeroScrollsCount;
 
         private readonly IWebSocketWrapper _socket;
         private readonly IDataContext _dataContext;
 
-        public InventoryGetScrollsCountHandler(IWebSocketWrapper socket, IDataContext dataContext)
+        public InventoryGetHeroScrollsCountHandler(IWebSocketWrapper socket, IDataContext dataContext)
         {
             _socket = socket;
             _dataContext = dataContext;
@@ -27,7 +27,7 @@ namespace GatewayStub.Api.RequestHandlers.Contract.ListeriaStorage
         {
             Console.WriteLine("InventoryGetScrollsCount message received");
             var scrollsAmount = _dataContext.Heroes.ScrollsAmount;
-            await _socket.Send(new InventoryGetScrollsCountResponse(EGatewayErrorCode.Success, scrollsAmount));
+            await _socket.Send(new InventoryGetHeroScrollsCountResponse(EGatewayErrorCode.Success, scrollsAmount));
         }
     }
 }

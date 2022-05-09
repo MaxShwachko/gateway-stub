@@ -8,7 +8,7 @@ namespace GatewayStub.Api.Responses.Contract.Lobby
     public class StatsEquipItemResponse : AContractResponse
     {
         public override byte AgentId => (byte) EAgentId.Lobby;
-        public override byte MethodId => (byte) EMethodId.StatsEquipItem;
+        public override byte MethodId => (byte) EMethodId.EquipmentEndpointsEquipItem;
         
         public readonly EGatewayErrorCode ErrorCode;
         public readonly int BindingUid;

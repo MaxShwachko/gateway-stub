@@ -84,7 +84,7 @@ namespace GatewayStub.Configuration
             container.AddSingleton<IContractRequestDataReader, BalanceGetBalanceByUserIdDataReader>();
             container.AddSingleton<IContractRequestDataReader, BalanceGetBalancesByUserIdAsArrayDataReader>();
             container.AddSingleton<IContractRequestDataReader, BalanceGetListWithPaginationDataReader>();
-            container.AddSingleton<IContractRequestDataReader, InventoryGetScrollsCountDataReader>();
+            container.AddSingleton<IContractRequestDataReader, InventoryGetHeroScrollsCountDataReader>();
             container.AddSingleton<IContractRequestDataReader, BalancesGetFreeExperienceBalanceDataReader>();
             container.AddSingleton<IContractRequestDataReader, HeroesLevelUpDataReader>();
             container.AddSingleton<IContractRequestDataReader, HeroesGiveFreeExperienceToHeroDataReader>();
@@ -138,7 +138,7 @@ namespace GatewayStub.Configuration
             container.AddSingleton<IContractRequestHandler, BalanceGetBalanceByUserIdHandler>();
             container.AddSingleton<IContractRequestHandler, BalanceGetBalancesByUserIdAsArrayHandler>();
             container.AddSingleton<IContractRequestHandler, BalanceGetListWithPaginationHandler>();
-            container.AddSingleton<IContractRequestHandler, InventoryGetScrollsCountHandler>();
+            container.AddSingleton<IContractRequestHandler, InventoryGetHeroScrollsCountHandler>();
             container.AddSingleton<IContractRequestHandler, BalancesGetFreeExperienceBalanceHandler>();
             container.AddSingleton<IContractRequestHandler, HeroesLevelUpHandler>();
             container.AddSingleton<IContractRequestHandler, HeroesGiveFreeExperienceToHeroHandler>();

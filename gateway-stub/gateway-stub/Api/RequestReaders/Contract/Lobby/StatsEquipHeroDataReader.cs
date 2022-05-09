@@ -8,7 +8,7 @@ namespace GatewayStub.Api.RequestReaders.Contract.Lobby
     public class StatsEquipHeroDataReader : IContractRequestDataReader
     {
         public byte AgentId => (byte) EAgentId.Lobby;
-        public byte MethodId => (byte) EMethodId.StatsEquipHero;
+        public byte MethodId => (byte) EMethodId.HeroesEndpointsEquipHero;
 
         public IContractRequestData ReadRequest(ByteReader reader)
         {

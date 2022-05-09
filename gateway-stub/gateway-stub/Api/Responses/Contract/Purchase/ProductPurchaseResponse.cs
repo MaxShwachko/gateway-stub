@@ -6,8 +6,8 @@ namespace GatewayStub.Api.Responses.Contract.Purchase
 {
     public class ProductPurchaseResponse : AContractResponse
     {
-        public override byte AgentId => (byte) EAgentId.Purchase;
-        public override byte MethodId => (byte) EMethodId.ProductPurchase;
+        public override byte AgentId => (byte) EAgentId.NewPurchase;
+        public override byte MethodId => (byte) EMethodId.ProductPurchaseLootbox;
         
         public readonly EGatewayErrorCode ErrorCode;
         public readonly bool Success;

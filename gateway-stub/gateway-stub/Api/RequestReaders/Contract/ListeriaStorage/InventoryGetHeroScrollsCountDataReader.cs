@@ -6,14 +6,14 @@ using GatewayStub.Core.Exchange;
 
 namespace GatewayStub.Api.RequestReaders.Contract.ListeriaStorage
 {
-    public class InventoryGetScrollsCountDataReader : IContractRequestDataReader
+    public class InventoryGetHeroScrollsCountDataReader : IContractRequestDataReader
     {
         public byte AgentId => (byte) EAgentId.ListeriaStorage;
-        public byte MethodId => (byte) EMethodId.InventoryGetScrollsCount;
+        public byte MethodId => (byte) EMethodId.InventoryGetHeroScrollsCount;
 
         public IContractRequestData ReadRequest(ByteReader reader)
         {
-            return new InventoryGetScrollsCountRequest();
+            return new InventoryGetHeroScrollsCountRequest();
         }
     }
 }

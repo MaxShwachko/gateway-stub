@@ -3,17 +3,17 @@ using GatewayStub.Api.Models.Dto;
 using GatewayStub.ByteFormatter;
 using GatewayStub.Core.Exchange;
 
-namespace GatewayStub.Api.Responses.Contract.Test
+namespace GatewayStub.Api.Responses.Contract.Lobby
 {
-	public class ItemStatsUpdatedNotification : AContractResponse
+	public class EquipmentEndpointsUpdatedItemNotification : AContractResponse
 	{
-		public override byte AgentId => (byte) EAgentId.Test;
-		public override byte MethodId => (byte) EMethodId.ItemStatsUpdatedNotification;
+		public override byte AgentId => (byte) EAgentId.Lobby;
+		public override byte MethodId => (byte) EMethodId.EquipmentEndpointsUpdatedItemNotification;
 
 		public readonly EGatewayErrorCode ErrorCode;
 		public readonly EquipmentItemDto Item;
         
-		public ItemStatsUpdatedNotification(EGatewayErrorCode errorCode, EquipmentItemDto item)
+		public EquipmentEndpointsUpdatedItemNotification(EGatewayErrorCode errorCode, EquipmentItemDto item)
 		{
 			ErrorCode = errorCode;
 			Item = item;

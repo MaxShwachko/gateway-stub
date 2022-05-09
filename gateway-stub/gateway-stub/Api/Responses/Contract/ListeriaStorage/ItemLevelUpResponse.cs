@@ -2,12 +2,12 @@
 using GatewayStub.ByteFormatter;
 using GatewayStub.Core.Exchange;
 
-namespace GatewayStub.Api.Responses.Contract.Test
+namespace GatewayStub.Api.Responses.Contract.ListeriaStorage
 {
 	public class ItemLevelUpResponse : AContractResponse
 	{
-		public override byte AgentId => (byte) EAgentId.Test;
-		public override byte MethodId => (byte) EMethodId.ItemLevelUp;
+		public override byte AgentId => (byte) EAgentId.ListeriaStorage;
+		public override byte MethodId => (byte) EMethodId.InventoryEndpointsLevelUp;
 
 		public readonly EGatewayErrorCode ErrorCode;
 		public readonly bool IsSuccess;

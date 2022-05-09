@@ -13,7 +13,7 @@ namespace GatewayStub.Api.RequestHandlers.Contract.Lobby
     public class StatsEquipHeroHandler : IContractRequestHandler
     {
         public byte AgentId => (byte) EAgentId.Lobby;
-        public byte MethodId => (byte) EMethodId.StatsEquipHero;
+        public byte MethodId => (byte) EMethodId.HeroesEndpointsEquipHero;
 
         private readonly IWebSocketWrapper _socket;
         private readonly IDataContext _dataContext;

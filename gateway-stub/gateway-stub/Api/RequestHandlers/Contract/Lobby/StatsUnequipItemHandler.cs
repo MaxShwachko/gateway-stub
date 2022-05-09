@@ -12,7 +12,7 @@ namespace GatewayStub.Api.RequestHandlers.Contract.Lobby
     public class StatsUnequipItemHandler : IContractRequestHandler
     {
         public byte AgentId => (byte) EAgentId.Lobby;
-        public byte MethodId => (byte) EMethodId.StatsUnequipItem;
+        public byte MethodId => (byte) EMethodId.EquipmentEndpointsUnequipItem;
 
         private readonly IWebSocketWrapper _socket;
         private readonly IDataContext _dataContext;

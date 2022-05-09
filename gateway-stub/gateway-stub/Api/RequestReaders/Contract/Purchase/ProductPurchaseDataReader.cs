@@ -7,8 +7,8 @@ namespace GatewayStub.Api.RequestReaders.Contract.Purchase
 {
     public class ProductPurchaseDataReader : IContractRequestDataReader
     {
-        public byte AgentId => (byte) EAgentId.Purchase;
-        public byte MethodId => (byte) EMethodId.ProductPurchase;
+        public byte AgentId => (byte) EAgentId.NewPurchase;
+        public byte MethodId => (byte) EMethodId.ProductPurchaseLootbox;
         
         public IContractRequestData ReadRequest(ByteReader reader)
         {

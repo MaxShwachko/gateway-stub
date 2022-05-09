@@ -8,7 +8,7 @@ namespace GatewayStub.Api.Responses.Contract.ListeriaStorage
     public class HeroesHeroAddedNotification : AContractResponse
     {
         public override byte AgentId => (byte) EAgentId.ListeriaStorage;
-        public override byte MethodId => (byte) EMethodId.HeroesHeroAddedNotification;
+        public override byte MethodId => (byte) EMethodId.HeroesEndpointsHeroAddedNotification;
         
         public readonly EGatewayErrorCode ErrorCode;
         public readonly byte HeroId;

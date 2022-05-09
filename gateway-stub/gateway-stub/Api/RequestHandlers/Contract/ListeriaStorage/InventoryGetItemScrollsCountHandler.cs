@@ -7,12 +7,12 @@ using GatewayStub.Core.Exchange;
 using GatewayStub.Core.WebSocket;
 using GatewayStub.Domain.Data;
 
-namespace GatewayStub.Api.RequestHandlers.Contract.Test
+namespace GatewayStub.Api.RequestHandlers.Contract.ListeriaStorage
 {
 	public class InventoryGetItemScrollsCountHandler : IContractRequestHandler
 	{
-		public byte AgentId => (byte) EAgentId.Test;
-		public byte MethodId => (byte) EMethodId.InventoryGetItemScrollsCount;
+		public byte AgentId => (byte) EAgentId.ListeriaStorage;
+		public byte MethodId => (byte) EMethodId.InventoryEndpointsGetEquipmentScrollsCount;
 
 		private readonly IWebSocketWrapper _socket;
 		private readonly IDataContext _dataContext;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using GatewayStub.Api.Enums;
 using GatewayStub.Api.Models.Dto;
 using GatewayStub.Api.Responses.Contract.Room;
 using GatewayStub.ByteFormatter;
@@ -66,8 +67,9 @@ namespace GatewayStub.Api.HttpHandlers
                 }
             }));
 
-            await _socket.Send(new Checkin(
-                    checkinSuccess, apiVersion, authToken, roomId, roomHost, gameTcpPort, gameUdpPort, teamId, playersList));
+            await _socket.Send(
+				new Checkin(EGatewayErrorCode.Success, checkinSuccess, apiVersion, authToken, 
+					roomId, roomHost, gameTcpPort, gameUdpPort, teamId, playersList));
             return StatusCodes.Status200OK;
         }
     }

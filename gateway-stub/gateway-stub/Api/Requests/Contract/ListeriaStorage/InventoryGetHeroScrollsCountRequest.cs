@@ -2,7 +2,7 @@
 
 namespace GatewayStub.Api.Requests.Contract.ListeriaStorage
 {
-    public class InventoryGetScrollsCountRequest : IContractRequestData
+    public class InventoryGetHeroScrollsCountRequest : IContractRequestData
     {
         
     }

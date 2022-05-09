@@ -4,15 +4,15 @@ using GatewayStub.Core.Exchange;
 
 namespace GatewayStub.Api.Responses.Contract.ListeriaStorage
 {
-    public class InventoryGetScrollsCountResponse : AContractResponse
+    public class InventoryGetHeroScrollsCountResponse : AContractResponse
     {
         public override byte AgentId => (byte) EAgentId.ListeriaStorage;
-        public override byte MethodId => (byte) EMethodId.InventoryGetScrollsCount;
+        public override byte MethodId => (byte) EMethodId.InventoryGetHeroScrollsCount;
 
         public readonly EGatewayErrorCode ErrorCode;
         public readonly int Amount;
 
-        public InventoryGetScrollsCountResponse(EGatewayErrorCode errorCode, int amount)
+        public InventoryGetHeroScrollsCountResponse(EGatewayErrorCode errorCode, int amount)
         {
             ErrorCode = errorCode;
             Amount = amount;

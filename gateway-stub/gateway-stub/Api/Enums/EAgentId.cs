@@ -4,15 +4,15 @@
     {
         Auth = 2,
 		Balances = 3,
-        GameBalancer = 10,
-		ListeriaStorage = 12,
-        Lobby = 13,
-        Market = 14,
-		ProductFactory = 17,
-        Promo = 18,
-        Purchase = 19,
-        Transactions = 25,
-        Room = 127,
+        GameBalancer = 11,
+		ListeriaStorage = 13,
+        Lobby = 14,
+        Market = 15,
+		ProductFactory = 19,
+        Promo = 20,
+        Purchase = 21,
+        NewPurchase = 29,
+        Transactions = 27,
         Test = 200
     }
 }
