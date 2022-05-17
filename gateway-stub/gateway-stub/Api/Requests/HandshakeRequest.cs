@@ -9,13 +9,15 @@ namespace GatewayStub.Api.Requests
     {
         public byte GetHeader() => (byte) EHeader.Handshake;
 
+        public readonly byte AppId;
         public readonly string AuthToken;
         public readonly string ApiVersion;
         public readonly string SessionToken;
 
-        public HandshakeRequest(string authToken, string apiVersion, string sessionToken)
-        {
-            AuthToken = authToken;
+        public HandshakeRequest(byte appId, string authToken, string apiVersion, string sessionToken)
+		{
+			AppId = appId;
+			AuthToken = authToken;
             ApiVersion = apiVersion;
             SessionToken = sessionToken;
         }
