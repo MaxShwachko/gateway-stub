@@ -1,11 +1,14 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using GatewayStub.Api.Enums;
 using GatewayStub.Api.Requests.Contract.Lobby;
+using GatewayStub.Api.Responses.Contract.ListeriaStorage;
 using GatewayStub.Api.Responses.Contract.Lobby;
 using GatewayStub.Core.Exchange;
 using GatewayStub.Core.WebSocket;
 using GatewayStub.Domain.Data;
+using GatewayStub.Domain.Enums;
 
 namespace GatewayStub.Api.RequestHandlers.Contract.Lobby
 {
@@ -29,7 +32,11 @@ namespace GatewayStub.Api.RequestHandlers.Contract.Lobby
             var statsUnequipHeroRequest = (StatsUnequipItemRequest) request;
             var equipment = _dataContext.Equipment;
             await _socket.Send(new StatsUnequipItemResponse(EGatewayErrorCode.Success, statsUnequipHeroRequest.BindingUid,
-                equipment.EquipmentBonuses, 1, statsUnequipHeroRequest.HeroBindingId));
+                equipment.EquipmentBonuses, statsUnequipHeroRequest.HeroBindingId, 1));
+            
+            var heroDto = _dataContext.Heroes.AvailableHeroes.FirstOrDefault(h => h.BindingUid == statsUnequipHeroRequest.HeroBindingId);
+            heroDto.EquipmentBonuses.Strength = (Int32.Parse(heroDto.EquipmentBonuses.Strength) - 10).ToString();
+            await _socket.Send(new HeroesStatsUpdatedNotification(EGatewayErrorCode.Success, heroDto, EStatsUpdateReason.Equip));
         }
     }
 }

@@ -29,8 +29,7 @@ namespace GatewayStub.Api.RequestHandlers.Contract.Auth
             var login = _dataContext.Auth.Session;
             await _socket.Send(
                 new AuthLoginResponse(EGatewayErrorCode.Success, login.AccessToken, login.ExpiresIn,
-                    login.RefreshExpiresIn, login.RefreshToken, login.TokenType, login.NotBeforePolicy,
-                    login.SessionState, login.Scope, login.UserId));
+                    login.RefreshExpiresIn, login.RefreshToken, login.UserId));
         }
     }
 }

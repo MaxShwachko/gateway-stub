@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using GatewayStub.Api.Enums;
-using GatewayStub.Api.Responses.Contract.Lobby;
 using GatewayStub.Api.Responses.Contract.Purchase;
 using GatewayStub.Core.Exchange;
 using GatewayStub.Core.WebSocket;

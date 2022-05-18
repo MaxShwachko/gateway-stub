@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using GatewayStub.Api.Enums;
 using GatewayStub.Api.Requests.Contract.ListeriaStorage;
 using GatewayStub.Api.Responses.Contract.ListeriaStorage;
-using GatewayStub.Api.Responses.Contract.Test;
 using GatewayStub.Core.Exchange;
 using GatewayStub.Core.WebSocket;
 using GatewayStub.Domain.Data;
@@ -28,10 +27,11 @@ namespace GatewayStub.Api.RequestHandlers.Contract.ListeriaStorage
 
         public async Task Handle(IContractRequestData request)
         {
-			var heroesLevelUpRequest = (HeroesLevelUpRequest) request;
+            var heroesLevelUpRequest = (HeroesLevelUpRequest) request;
 			Console.WriteLine("HeroesLevelUp message received");
             var heroDto = _dataContext.Heroes.AvailableHeroes.FirstOrDefault(h => h.BindingUid == heroesLevelUpRequest.HeroUid);
             await _socket.Send(new HeroesLevelUpResponse(EGatewayErrorCode.Success, true));
+            heroDto.Level++;
             await _socket.Send(new HeroesStatsUpdatedNotification(EGatewayErrorCode.Success, heroDto, EStatsUpdateReason.LevelUp));
         }
     }

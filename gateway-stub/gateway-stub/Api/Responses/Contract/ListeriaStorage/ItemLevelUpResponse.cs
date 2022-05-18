@@ -10,18 +10,15 @@ namespace GatewayStub.Api.Responses.Contract.ListeriaStorage
 		public override byte MethodId => (byte) EMethodId.InventoryEndpointsLevelUp;
 
 		public readonly EGatewayErrorCode ErrorCode;
-		public readonly bool IsSuccess;
 
-		public ItemLevelUpResponse(EGatewayErrorCode errorCode, bool isSuccess)
+		public ItemLevelUpResponse(EGatewayErrorCode errorCode)
 		{
 			ErrorCode = errorCode;
-			IsSuccess = isSuccess;
 		}
 
 		protected override void WriteBody(ByteWriter writer)
 		{
 			writer.Write((int) ErrorCode);
-			writer.Write(IsSuccess);
 		}
 	}
 }

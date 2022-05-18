@@ -3,10 +3,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using GatewayStub.Api.Enums;
 using GatewayStub.Api.Requests.Contract.ListeriaStorage;
-using GatewayStub.Api.Requests.Contract.Test;
 using GatewayStub.Api.Responses.Contract.ListeriaStorage;
 using GatewayStub.Api.Responses.Contract.Lobby;
-using GatewayStub.Api.Responses.Contract.Test;
 using GatewayStub.Core.Exchange;
 using GatewayStub.Core.WebSocket;
 using GatewayStub.Domain.Data;
@@ -31,8 +29,11 @@ namespace GatewayStub.Api.RequestHandlers.Contract.ListeriaStorage
 		{
 			var itemLevelUpRequest = (ItemLevelUpRequest) request;
 			Console.WriteLine("ItemLevelUpHandler message received");
+			await _socket.Send(new ItemLevelUpResponse(EGatewayErrorCode.Success));
+			
 			var itemDto = _dataContext.Equipment.Equipment.FirstOrDefault(h => h.BindingUid == itemLevelUpRequest.ItemUid);
-			await _socket.Send(new ItemLevelUpResponse(EGatewayErrorCode.Success, true));
+			itemDto.Level++;
+
 			await _socket.Send(new EquipmentEndpointsUpdatedItemNotification(EGatewayErrorCode.Success, itemDto));
 		}
 	}
