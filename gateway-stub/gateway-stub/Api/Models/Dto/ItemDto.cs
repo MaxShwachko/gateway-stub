@@ -10,6 +10,18 @@ namespace GatewayStub.Api.Models.Dto
 		public int Amount;
 		public int ItemId;
 
+		public ItemDto()
+		{
+			
+		}
+		
+		public ItemDto(EProductType type, int amount, int itemId)
+		{
+			Type = type;
+			Amount = amount;
+			ItemId = itemId;
+		}
+
 		public void NetSerialize(ByteWriter writer)
 		{
 			writer.Write((int) Type);

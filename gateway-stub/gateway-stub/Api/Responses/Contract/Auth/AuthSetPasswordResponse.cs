@@ -15,12 +15,10 @@ namespace GatewayStub.Api.Responses.Contract.Auth
         public readonly string IdToken;
         public readonly int RefreshExpiresIn;
         public readonly string RefreshToken;
-        public readonly string Scope;
-        public readonly string SessionState;
-        public readonly string TokenType;
+        public readonly string UserId;
 
         public AuthSetPasswordResponse(EGatewayErrorCode errorCode, string accessToken, int expiresIn, string idToken,
-            int refreshExpiresIn, string refreshToken, string scope, string sessionState, string tokenType)
+            int refreshExpiresIn, string refreshToken, string userId)
         {
             ErrorCode = errorCode;
             AccessToken = accessToken;
@@ -28,9 +26,7 @@ namespace GatewayStub.Api.Responses.Contract.Auth
             IdToken = idToken;
             RefreshExpiresIn = refreshExpiresIn;
             RefreshToken = refreshToken;
-            Scope = scope;
-            SessionState = sessionState;
-            TokenType = tokenType;
+            UserId = userId;
         }
 
         protected override void WriteBody(ByteWriter writer)
@@ -41,9 +37,7 @@ namespace GatewayStub.Api.Responses.Contract.Auth
             writer.Write(IdToken);
             writer.Write(RefreshExpiresIn);
             writer.Write(RefreshToken);
-            writer.Write(Scope);
-            writer.Write(SessionState);
-            writer.Write(TokenType);
+            writer.Write(UserId);
         }
     }
 }

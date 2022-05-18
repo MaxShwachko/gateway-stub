@@ -12,17 +12,20 @@ namespace GatewayStub.Api.Responses.Contract.ProductFactory
 
         public readonly EGatewayErrorCode ErrorCode;
         public readonly NetList<ItemDto> Rewards;
+        public readonly int BindingUid;
 
-        public ProductLootboxOpenedNotification(EGatewayErrorCode errorCode, NetList<ItemDto> rewards)
+        public ProductLootboxOpenedNotification(EGatewayErrorCode errorCode, NetList<ItemDto> rewards, int bindingUid)
         {
             ErrorCode = errorCode;
             Rewards = rewards;
+            BindingUid = bindingUid;
         }
 
         protected override void WriteBody(ByteWriter writer)
         {
             writer.Write((int) ErrorCode);
             Rewards.NetSerialize(writer);
+            writer.Write(BindingUid);
         }
     }
 }

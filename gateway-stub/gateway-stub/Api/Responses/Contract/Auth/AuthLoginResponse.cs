@@ -14,25 +14,16 @@ namespace GatewayStub.Api.Responses.Contract.Auth
         public readonly int ExpiresIn;
         public readonly int RefreshExpiresIn;
         public readonly string RefreshToken;
-        public readonly string TokenType;
-        public readonly byte NotBeforePolicy;
-        public readonly string SessionState;
-        public readonly string Scope;
         public readonly string UserId;
 
         public AuthLoginResponse(EGatewayErrorCode errorCode, string accessToken, int expiresIn, int refreshExpiresIn,
-            string refreshToken, string tokenType, byte notBeforePolicy, string sessionState, string scope,
-            string userId)
+            string refreshToken, string userId)
         {
             ErrorCode = errorCode;
             AccessToken = accessToken;
             ExpiresIn = expiresIn;
             RefreshExpiresIn = refreshExpiresIn;
             RefreshToken = refreshToken;
-            TokenType = tokenType;
-            NotBeforePolicy = notBeforePolicy;
-            SessionState = sessionState;
-            Scope = scope;
             UserId = userId;
         }
 
@@ -43,10 +34,6 @@ namespace GatewayStub.Api.Responses.Contract.Auth
             writer.Write(ExpiresIn);
             writer.Write(RefreshExpiresIn);
             writer.Write(RefreshToken);
-            writer.Write(TokenType);
-            writer.Write(NotBeforePolicy);
-            writer.Write(SessionState);
-            writer.Write(Scope);
             writer.Write(UserId);
         }
     }
